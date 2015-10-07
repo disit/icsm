@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:app="http://www.cloudicaro.it/cloud_ontology/applications#"
+	xmlns:icr="http://www.cloudicaro.it/cloud_ontology/core#">
+	<icr:ServiceMetric>
+		<icr:atTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-10-21T12:39:13</icr:atTime>
+		<icr:hasMetricName>CPU AVG</icr:hasMetricName>
+		<icr:hasMetricValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3.375
+		</icr:hasMetricValue>
+		<icr:hasMetricUnit>%</icr:hasMetricUnit>
+		<icr:hasName rdf:resource="VirtMach02@192.168.0.163" />
+		<icr:dependsOn rdf:resource="urn:cloudicaro:VirtualMachine:TEST-015_HM01_VM02" />
+	</icr:ServiceMetric>
+	
+</rdf:RDF>

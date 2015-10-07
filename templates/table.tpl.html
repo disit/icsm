@@ -1,0 +1,45 @@
+<!--%tpl_table-->
+<div class="{responsive}">
+<table id="{id}" {attrs} class="{class}">
+<colgroup>{colgroup}</colgroup>
+<thead>
+ 	{thead}
+</thead>
+<tfoot>
+ 	{tfoot}
+</tfoot>
+<tbody>
+ 	{rows}
+</tbody>
+</table>
+</div>
+<!--%%tpl_table-->
+
+
+<!--%tpl_table_cells-->
+  	 <{tag} {attrs} class="{class}">{data}</{tag}>
+<!--%%tpl_table_cells-->
+
+<!--%tpl_row-->
+	<tr class="{class}" {attrs}>
+	  {cells}
+	</tr>
+ <!--%%tpl_row-->
+ 
+ <!--%tpl_tabledataview-->
+ <div id=smTableDataView>
+ 	 {noData}
+ 	 {headerBar}
+	 {table}
+	 {html}
+ </div>
+ <!--%%tpl_tabledataview-->
+ 
+ <!--%tpl_tabledataview-->
+ <div id=smTableDataView>
+ 	 {noData}
+ 	 {headerBar}
+	 {table}
+	 {html}
+ </div>
+ <!--%%tpl_tabledataview-->

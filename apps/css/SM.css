@@ -1,0 +1,131 @@
+@CHARSET "ISO-8859-1";
+.SM-icon-nagiosclient
+{
+	background-image:url("../img/nagiosclient.png");
+	
+}
+
+.SM-icon-nagiosql
+{
+	background-image:url("../img/nagiosqlico.png");
+	
+}
+
+.SM-icon-livestatusclient
+{
+	background-image:url("../img/livestatus.gif");
+	
+}
+
+.SM-icon-home
+{
+	background-image:url("../img/home.png");
+	
+}
+
+.SM-icon-nagiospnp
+{
+	background-image:url("../img/pnp4nagios.png");
+	
+}
+.SM-icon-restserver
+{
+	background-image:url("../img/api.png");
+	
+}
+
+.SM-icon-configurator
+{
+	background-image:url("../img/configurator.png");
+	
+}
+
+.SM-icon-nagiosqlclient
+{
+	background-image:url("../img/nagiosqlclient.png");
+	
+}
+
+.SM-icon-monitor
+{
+	background-image:url("../img/monitor.png");
+	
+}
+
+.logo
+{
+	background-image: url("../img/logo.png");
+	background-size: 48px 48px;
+	width: 48px;
+	height: 48px;
+	vertical-align: middle;
+	display: inline-block;
+	background-repeat: no-repeat;
+	margin-right: 5px;
+	background-position: center 3px;
+}
+
+#access #wrapper
+{
+	background-image: url("../img/cloud.png");
+	/*width: 300px;*/
+	margin: auto;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color:transparent;
+	border:0px;
+	color:#555;
+/*	max-width:350px;*/
+	padding:50px;
+	padding-top: 105px;
+	height: 200px;
+}
+
+#access #logo
+{
+	font-size: 32px;
+	color: #2C2C2C;
+	text-shadow: 2px 2px 2px #aaa;
+	height: 160px;
+	background-image: url(../img/icaro.png);
+	background-position: center 50px;
+	background-repeat: no-repeat;
+	background-size: 120px 120px;
+}
+
+
+.navbar-header a.navbar-brand
+{
+	padding:1px 15px;
+}
+
+@media(max-width:400px)
+{
+	.logo
+	{
+		background-image: url("../img/logo.png");
+		background-size: 36px 36px;
+		width: 36px;
+		height: 36px;
+		vertical-align: middle;
+		display: inline-block;
+		background-repeat: no-repeat;
+		margin-right: 5px;
+		background-position: center center;
+	}
+	
+	.navbar-header a.navbar-brand {
+		padding: 8px;
+	}
+	#access #logo
+	{
+		font-size: 26px;
+		
+	}
+	#access #wrapper
+	{
+		padding-top: 85px;
+		height: 180px;
+	}
+}
+}

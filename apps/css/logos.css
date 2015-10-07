@@ -1,0 +1,208 @@
+.icon-windows {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-windowsXP, .icon-windowsxp {
+	background-image:url("../img/windowsxp.png");
+	margin:0px 2px;
+}
+
+.icon-windowsServer2012R2 {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-windowsServer2012 {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-windowsServer2008 {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-windowsServer2003 {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-windowsVista {
+	background-image:url("../img/vista.png");
+	margin:0px 2px;
+}
+
+.icon-windows7 {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-windows8 {
+	background-image:url("../img/win_server.png");
+	margin:0px 2px;
+}
+
+.icon-linux {
+	background-image:url("../img/linux.png");
+	margin:0px 2px;
+}
+
+.icon-ubuntu {
+	background-image:url("../img/ubuntu.png");
+	margin:0px 2px;
+}
+
+.icon-redHat, .icon-redhat {
+	background-image:url("../img/redhat.png");
+	margin:0px 2px;
+}
+
+.icon-centos {
+	background-image:url("../img/centos.png");
+	margin:0px 2px;
+}
+
+.icon-as400 {
+	background-image:url("../img/ibm.png");
+	margin:0px 2px;
+}
+
+.icon-nexus {
+	background-image:url("../img/nexus.png");
+	margin:0px 2px;
+}
+
+.icon-cisco-nexus {
+	background-image:url("../img/cisco3.png");
+	margin:0px 2px;
+}
+
+.icon-vmware_esxi, .icon-vmware_esx {
+	background-image:url("../img/vmware.png");
+	margin:0px 2px;
+}
+
+.icon-generic-os{
+	background-image:url("../img/server2.png");
+	margin:0px 2px;
+}
+
+span.os-type {
+text-transform: capitalize;
+}
+
+/**** jstree LOGOS **************/
+
+.jstree-0 li[type="ApacheWebServer"] > a > .jstree-icon{
+background-image: url(../img/apache.png) !important;
+background-position: 0 0;
+background-size: 16px 16px;
+}
+
+.jstree-0 li[type="HttpBalancer"] > a > .jstree-icon {
+background-image: url(../img/apache.png) !important;
+background-position: 0 0;
+background-size: 16px 16px;
+}
+
+.jstree-0 li[type="ApacheTomcat"] > a > .jstree-icon {
+background-image: url(../img/tomcat_small.png) !important;
+background-position: 0 0;
+background-size: 16px 16px;
+}
+
+.jstree-0 li[type="MySQL"] > a > .jstree-icon {
+background-image: url(../img/mysql.gif) !important;
+background-position: 0 0;
+background-size: 16px 16px;
+}
+
+/***** segment view logos ******/
+.segment-icon-container.well
+{
+	max-height:140px;
+}
+
+.segment-icon {
+	background: no-repeat center center url(../img/notavailable.jpg);
+	height: 100px;
+	background-size: 100px 100px;
+}
+
+.segment-icon-vmhost
+{
+	background-image: url(../img/Virtual-machine-icon.png) !important;
+}
+
+.segment-icon-host
+{
+	background-image: url(../img/cloud-host.png) !important;
+}
+
+
+.segment-icon-UP
+{
+	background-image: url(../img/ok.png) !important;
+	text-align: center;
+	font-size: 32px;
+	line-height: 3;
+	font-weight: bold;
+}
+
+.segment-icon-DOWN
+{
+	background-image: url(../img/critical.png) !important;
+	text-align: center;
+	font-size: 24px;
+	line-height: 4.2;
+	font-weight: bold;
+}
+
+
+
+
+.segment-icon-InternetInformationServer
+{
+	background-image: url(../img/microsoft-iis.png) !important;
+}
+
+.segment-icon-MSSqlServer2012
+{
+	background-image: url(../img/MSSql2012.png) !important;
+}
+
+.segment-icon-OfficeWebAppServer2013
+{
+	background-image: url(../img/Web-Apps-logo.png) !important;
+}
+
+.segment-icon-SharePointServer2013
+{
+	background-image: url(../img/SharePoint-logo.png) !important;
+}
+
+.segment-icon-ApacheWebServer
+{
+	background-image: url(../img/apache-logo.png) !important;
+}
+
+.segment-icon-ApacheWebServer
+{
+	background-image: url(../img/apache-logo.png) !important;
+}
+
+.segment-icon-HttpBalancer
+{
+	background-image: url(../img/apache-logo.png) !important;
+}
+
+.segment-icon-ApacheTomcat
+{
+	background-image: url(../img/apache-tomcat-7.gif) !important;
+}
+
+.segment-icon-MySQL
+{
+	background-image: url(../img/mysql-logo.gif) !important;
+}

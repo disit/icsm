@@ -1,0 +1,22 @@
+<!--%tpl_notification_bar-->
+<ul class="nav navbar-nav navbar-right">  
+        <li class="dropdown" title="Alerts"><a class="dropdown-toggle notifications" data-toggle="dropdown" href="#"><i class="glyphicon glyphicon-bell" > </i> Alerts <span id="notification-badge" class="badge badge-important"></span><span class=caret></span></a>  
+          <ul id="notifications" class="dropdown-menu" role="menu" aria-labelledby="dLabel"></ul>  
+        </li>  
+      </ul>  
+<!--%%tpl_notification_bar-->     
+      
+<!--%tpl_notification_list-->
+{notification_list}
+<!--%%tpl_notification_list-->
+
+<!--%tpl_notification_item-->
+<li id="notification_{id}" class="{class}">  
+		           <div style="width:350px;padding:5px;overflow:auto;line-height:1">  
+		             <div><img src="{iconBaseUrl}{iconFile}" style="width:32px; height:32px;"/><span>&nbsp;<b class=sender>{from_user_name}</b> says: </span><a href="javascript:DeleteNotification({id})" style="float:right;" title="Delete Message"><i class="glyphicon glyphicon-trash"></i></a></div>
+		             <div style="padding:5px 32px;"><b>{subject}</b></div>
+		             <div style="padding-left:32px;padding-right:32px;font-size:85%"><a href="javascript:ViewNotification({id})" style="display:inline-block;text-overflow:ellipsis;white-space: nowrap;width: 100%;overflow: hidden;">{message}</a></div>		             
+		             <div><span style="float:right;font-size:75%">{timestamp}</span></div>
+		           </div>  
+</li>  
+<!--%%tpl_notification_item-->

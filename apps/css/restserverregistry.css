@@ -1,0 +1,50 @@
+
+.rest_server_status_dashboard
+{
+	background-color: transparet;
+	width: 100%;
+	border-radius: 4px;
+	display: inline-block;
+	
+	overflow:auto;
+}
+
+.rest_server_status_dashboard .panel-heading
+{
+	margin:0;
+}
+
+.rest_server_status
+{
+	padding:5px;
+	
+}
+
+.rest_server_status_info
+{
+	height:20px;
+	font-size:10px;	
+}
+.rest_server_status_info span
+{
+	padding-right:5px;
+	padding-left:5px;
+}
+
+.rest_server_status_divider {
+padding: 0 5px 0 5px;
+}
+
+.rest_server_status_divider hr{
+	margin:0;
+}
+
+.rest_server_status_icon
+{
+	width: 16px;
+	height: 16px;
+	background-image: url("../img/rest.gif");
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+}

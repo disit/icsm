@@ -1,0 +1,38 @@
+<!--%tpl_KB_status-->
+<h5><i class="kb_icon"></i> KB Status</h5>
+<div class="monitor_tool_status">
+{no_data}			
+<!--%tpl_repeat_KB_status_data-->
+<div class=monitor_tool_status_info>
+	<label class=kb_meter>{meter}</label>
+	<span class='kb_meter_value badge'>{value}</span>
+</div>
+<!--%%tpl_repeat_KB_status_data-->
+{KB_status_data}
+</div>
+<!--%%tpl_KB_status-->
+
+<!--%tpl_KB_status_dashboard-->
+<div id="KB_dashboard" class="dashboard-element col-md-6 col-lg-6 col-xg-6">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Knownledge Base</div>
+		<div class="panel-body"  id="{id}">
+			<div class="monitor_tool_dashboard col-lg-6  col-md-12 ">
+				<h5><i class="kb_icon"></i> KB Server</h5>
+				<div class="monitor_tool_status">
+					<div class="monitor_tool_status_info"><label style="float:left">Overall status</label><span style="float:right" class="label label-{status}">{status_msg}</span></div>
+				</div>
+				<div class="monitor_tool_divider" ><hr></div>
+				<div class="monitor_tool_status">
+					<div class="monitor_tool_status_info"><label style="float:left">Version</label><span style="float:right">{version}</span></div>
+					<div class="monitor_tool_status_info"><label style="float:left">Host address</label><span style="float:right">{ip}</span></div>
+					<div class="monitor_tool_status_info"><label style="float:left">Response (ms)</label><span style="float:right">{response}</span></div>
+				</div>
+			</div>
+			<div class="monitor_tool_dashboard col-lg-6  col-md-12 ">
+					{internal_status}
+			</div>
+		</div>
+	</div>
+</div>
+<!--%%tpl_KB_status_dashboard-->

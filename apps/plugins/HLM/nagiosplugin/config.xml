@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<configuration>
+<parameter name="metricspath">/usr/local/nagios/libexec/HLM/tmp/urn:cloudicaro:BusinessConfiguration:TEST10_metrics.xml</parameter>
+<parameter name="xsdpath">/usr/local/nagios/libexec/HLM/hlm.xsd</parameter>
+<parameter name="hkbpath">/usr/local/nagios/libexec/HLM/tmp/HLM-BC10@0.0.0.0xml</parameter>
+<parameter name="skbpath">/usr/local/nagios/libexec/HLM/skb.xml</parameter>
+<parameter name="logpath">/usr/local/nagios/libexec/HLM/log.txt</parameter>
+<parameter name="hostgquery">GET%20hostgroups\\\\nColumns:members\\\\nFilter:alias%20=%20</parameter>
+<parameter name="servicegquery">GET%20servicegroups\\\\nColumns:members\\\\nFilter:name%20=%20</parameter>
+<parameter name="aliasquery">GET%20hosts\\\\nColumns:%20alias\\\\nFilter:%20name%20=%20</parameter>
+<parameter name="servicequery">GET%20services\\\\nColumns:%20service_description\\\\nFilter:%20display_name%20=%20$lmetric$\\\\nFilter:%20host_name%20=%20$hostname$</parameter>
+<parameter name="sendNaN">false</parameter>
+<module id="0001" status="enabled" type="livestatus">
+   <parameter name="username">nagiosadmin</parameter>
+   <parameter name="password">password</parameter>
+   <parameter name="hostaddress">http://localhost/live/live.php?q=</parameter>  
+ </module>
+<module id="0002" status="enabled" type="datacollector">
+   <parameter name="username">nagiosadmin</parameter>
+   <parameter name="password">password</parameter>
+   <parameter name="hostaddress">http://localhost/pnp4nagios/</parameter>  
+ </module>
+<module id="0003" status="enabled" type="kb">
+   <parameter name="username">test</parameter>
+   <parameter name="password">password</parameter>
+   <parameter name="hostaddress">http://localhost/IcaroSM/api/HLM/RDF/write</parameter>  
+ </module>
+</configuration>

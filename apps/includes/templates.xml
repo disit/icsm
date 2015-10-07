@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <host>
+    <windows>windows-server</windows>
+    <windowsXP>windows-server</windowsXP>
+    <windowsServer2012>windows-server</windowsServer2012>
+    <windows8>windows-server</windows8>
+    <linux>linux-server</linux>
+    <ubuntu>linux-server</ubuntu>
+    <as400>IBM-As400</as400>
+    <nexus>Cisco-Nexus</nexus>
+    <cisco-nexus>Cisco-Nexus</cisco-nexus>
+  </host>
+  <vmhost>
+    <windows>windows-server</windows>
+    <windowsXP>windows-server</windowsXP>
+    <windowsServer2012>windows-server</windowsServer2012>
+    <windows8>windows-server</windows8>
+    <linux>linux-server</linux>
+    <ubuntu>ubuntu-linux-server</ubuntu>
+    <as400>IBM-As400</as400>
+    <nexus>Cisco-Nexus</nexus>
+    <cisco-nexus>Cisco-Nexus</cisco-nexus>
+  </vmhost>
+  <device>
+    <ExternalStorage>external-storage</ExternalStorage>
+    <Firewall>firewall</Firewall>
+    <Router>router</Router>
+  </device>
+  <wmdevice>
+    <ExternalStorage>WM-external-storage</ExternalStorage>
+    <Firewall>WM-firewall</Firewall>
+    <Router>WM-router</Router>
+  </wmdevice>
+</templates>

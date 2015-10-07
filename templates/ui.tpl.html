@@ -1,0 +1,281 @@
+<!--%tpl_html-->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="{baseUrl}" />
+</head>
+<body>
+{html}
+</body>
+</html>
+<!--%%tpl_html-->
+
+<!--%tpl_tabs-->
+<div id={id}_tabs>
+ 
+		<ul class="nav nav-tabs {class}">
+			<!--%tpl_repeat_li-->
+			<li class="{tab_active}"><a href="#{tab_id}" data-toggle="tab" class="button light-gray btn-sm">{tab_title}</a></li>
+			<!--%%tpl_repeat_li-->
+  			{li}	
+		</ul>
+		<div id="tabs_container" class="tab-content">
+		<!--%tpl_repeat_div-->
+		<div id="{tab_id}" class="tab-pane {tab_active} {tab_panel_class}">
+		{tab_data}
+		</div>
+		<!--%%tpl_repeat_div-->
+  		{div}	
+  		</div>
+</div>
+<script type="text/javascript"> 
+$(document).ready(function () {
+        	$('#{id}_tabs').tab();
+        	});
+</script>
+<!--%%tpl_tabs-->
+
+<!--%tpl_page_menubar-->
+<div id=menubar-container class=hidden-xs>
+	  <div id=menubar>{menubar}</div>
+	  <p class="visible-xs pull">
+            <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-down"></i></button>
+      </p>
+</div>
+<div id="{id}" class="page-header {class}">
+	
+  <h2>{header}</h2>
+</div>
+<div class="page-container {class}">
+	  	{menu}
+	  	{content}
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('[data-toggle="offcanvas"]').click(function () {
+    $('#menubar').toggleClass('active')
+  });
+});
+</script>
+<!--%%tpl_page_menubar-->
+
+<!--%tpl_page-->
+<div id=menubar-container class=hidden-xs>
+	  {menubar}
+</div>
+<div id="{id}" class="page-header {class}">
+  <h2>{header}</h2>
+</div>
+<div class="page-container {class}">
+	  	{menu}
+	  	{content}
+</div>
+<!--%%tpl_page-->
+
+<!--%tpl_panel-->
+<div id="{panel_id}" class="panel panel-{panel_type} {class}">
+  <div class="panel-heading">
+    {panel_icon} {panel_title}
+  </div>
+  <div class="panel-body">
+    {panel_content}
+  </div>
+</div>
+<!--%%tpl_panel-->
+
+<!--%tpl_panel_custom-->
+<div id="{panel_id}" class="panel panel-{panel_type} {class}">
+  <div class="panel-heading">
+    {panel_icon} {panel_title}
+  </div>
+  <div class="panel-body">
+    {panel_content}
+  </div>
+</div>
+<!--%%tpl_panel_custom-->
+
+<!--%tpl_panel_accordion-->
+<div class="panel panel-{panel_type} {class}">
+  <div class="panel-heading">
+    <a data-toggle="collapse" data-parent="#accordion"
+                href="#{panel_id}">{panel_icon} {panel_title}</a>
+  </div>
+   <div id="{panel_id}" class="panel-collapse collapse {collapse}">
+ 	 	<div class="panel-body">
+    		{panel_content}
+  		</div>
+  </div>
+</div>
+<!--%%tpl_panel_accordion-->
+
+
+<!--%tpl_tree_menu-->
+        <div id={id}>
+            <ul id="tree_menu" class="list-group {class}">
+                {tree_menu_items}
+            </ul>
+        </div>   
+<!--%%tpl_tree_menu-->
+
+<!--%tpl_tree_menu_item-->
+<li class="list-group-item"><a href="{url}" class="tree-toggle" >{header} <b class="caret {class}"></b></a>
+                    <ul class="nav tree {class}">
+                     <!--%tpl_repeat_tree_menu_subitem-->
+                     <li><a href="{url}">{subtitle}</a></li>
+					 <!--%%tpl_repeat_tree_menu_subitem-->
+					 {tree_menu_subitem}
+                    </ul>
+</li>
+<!-- <li class="divider"></li> -->
+<!--%%tpl_tree_menu_item-->
+
+<!--%tpl_list-group-->
+<ul class="list-group">
+<!--%tpl_repeat_list_group_item-->
+               <li class=list-group-item ><a href="{url}">{title}</a></li>	
+<!--%%tpl_repeat_list_group_item-->
+{list_group_item}
+            </ul>
+<!--%%tpl_list-group-->
+
+<!--%tpl_two_columns_layout-->
+<div id={id}>
+<div class="row">
+
+	<div id={id}_container-left class="col-md-3">
+	  {left}	
+	</div>
+	<div id={id}_container-right class="col-md-9">
+		{right}
+	</div>
+	
+</div>
+</div>
+
+<!--%%tpl_two_columns_layout-->
+
+<!--%tpl_message-->
+	<div class="alert alert-{type}"><a class=close data-dismiss="alert" href="#">&times;</a>{message}</div>
+<!--%%tpl_message-->
+
+<!--%tpl_actions_forms-->
+  <!--%tpl_repeat_action_form-->
+  <form class="action_form {class}" style="display:inline;" id="{id}" method="{method}" action="{url}"> 
+	<button type=submit title="{title}" class="button action_form_cmd" data-toggle="modal" data-title="{title}" data-message="{message}" data-target="{target}">{data}</button>
+   </form>
+  <!--%%tpl_repeat_action_form-->
+  {action_form}
+<!--%%tpl_actions_forms-->
+
+<!--%tpl_progress_bar_dlg-->
+<div class="modal fade" id="{id}" tabindex="-1" role="dialog" aria-labelledby="{id}-Label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="{id}-Label"><i class="glyphicon glyphicon-time"></i> Please Wait</h4>
+      </div>
+      <div id=progressbar-container class="modal-body center-block">
+        <p id="mText">{text}</p>
+        <div class="progress">
+          <div class="progress-bar bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--%%tpl_progress_bar_dlg-->
+
+<!--%tpl_progress_bar-->
+<div class="progress" title="{title}">
+          <div class="progress-bar bar {class}" role="progressbar" aria-valuenow="{value}" aria-valuemin="{min}" aria-valuemax="{max}" style="width:{value}%;">
+  		  {text}
+          </div>
+</div>
+<!--%%tpl_progress_bar-->
+    
+<!--%tpl_TwoButtonsModalRemote_Dlg-->
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">{title}</h4>
+            </div>
+            <div class="modal-body">{body}</div>
+            <div class="modal-footer">
+                <button type="button" id="btn{btn1}" class="btn btn-default" data-dismiss="modal">{btn1}</button>
+                <button type="button" id="btn{btn2}" class="btn btn-primary">{btn2}</button>
+            </div>
+        
+<!--%%tpl_TwoButtonsModalRemote_Dlg-->
+
+<!--%tpl_TwoButtonsModal_Dlg-->
+<div class="modal fade {class}" id="{id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">{title}</h4>
+            </div>
+            <div class="modal-body">{body}</div>
+            <div class="modal-footer">
+                <button type="button" id="btn{btn1}" class="btn btn-default" data-dismiss="modal">{btn1}</button>
+                <button type="button" id="btn{btn2}" class="btn btn-primary">{btn2}</button>
+            </div>
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
+</div>
+<!--%%tpl_TwoButtonsModal_Dlg-->
+
+<!--%tpl_YesNo_Dlg-->
+<div class="modal fade {class}" id="{id}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">{title}</h4>
+                </div>
+            
+                <div class="modal-body">{body}</div>
+                
+                <div class="modal-footer">
+                    <a href="#" id="btnNo" class="btn btn-default" data-dismiss="modal">No</a>
+                    <a href="#" id="btnYes" class="btn btn-default danger">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+<!--%%tpl_YesNo_Dlg-->
+
+<!--%tpl_Modal_dlg-->
+<div class="modal fade {class}" id="{id}" tabindex="-1" role="dialog" aria-labelledby="{id}-Label" aria-hidden="true">
+  <div class="modal-dialog">
+     <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">{title}</h4>
+        </div>
+        <div class="modal-body">
+            {body}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default button light-gray" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!--%%tpl_Modal_dlg-->
+
+<!--%tpl_Modal_remote_Dlg-->
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">{title}</h4>
+            </div>
+            <div class="modal-body">{body}</div>
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-default button light-gray" data-dismiss="modal">Close</button>
+            </div>
+        
+<!--%%tpl_Modal_remote_Dlg-->

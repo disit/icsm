@@ -1,0 +1,30 @@
+.dashboard-element {
+/*display: inline-block;
+overflow: auto;
+padding-left: 2px;
+padding-left: 2px;*/
+}
+
+.dashboard-element .panel-body
+{
+	/*min-height:200px;*/
+}
+
+
+@media (max-width:992px){
+	.dashboard-element {
+		padding:2px !important;
+	}
+	
+}
+
+#dashboard
+{
+	overflow:auto;
+}
+
+div#server_time {
+height: 24px;
+text-align: right;
+margin: 5px 15px;
+}

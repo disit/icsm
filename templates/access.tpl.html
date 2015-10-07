@@ -1,0 +1,81 @@
+<!--%tpl_access-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<base href="{baseUrl}" />
+<title>Icaro - Supervisor & Monitor</title>
+<meta name="robots" content="noindex,nofollow" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body id="access">
+	<div id="err"></div>
+	<div id="wrapper">{wrapper}</div>
+	<div id="logo">{logo}</div>
+    <div id="footer">{footer}</div>
+</body>
+</html>
+<!--%%tpl_access-->
+
+<!--%tpl_access_form-->
+<form name="ajaxform" id="ajaxform">
+                <label>Username</label>
+                <input type="text" name="nameuser" id="nameuser" class="textfield" value="" />
+                <label>Password</label>
+                <input type="password" name="passuser" id="passuser" class="textfield" />
+                Remember me? <input type="checkbox" name="remember" value="1" /> </br>
+                <input type="submit" name="submit" id="submit" class="buttonfield" value="Login" />
+                <a style="float:right" id=register href="#" >Register</a>
+                </form>
+<!--%%tpl_access_form-->
+
+<!--%tpl_access_register_form-->
+<form name="ajaxform" id="ajaxform">
+	 <label>Username</label>
+	 <input type="text"  class="textfield"name="username" />
+	 <label>Password</label>
+	 <input type="password"  class="textfield" name="password" />
+	 <label>Email</label>
+	 <input type="text"  class="textfield" name="email" />
+	 <input type="submit" value="Register user" class="buttonfield"/>
+	 <a style="float:right" id=login href="#" >Login</a>
+	</form>
+<!--%%tpl_access_register_form-->
+
+<!--%tpl_access_welcome-->
+<div id="access_welcome" class="btn-group nav">
+<button class="btn btn-default"><i class="glyphicon glyphicon-user"></i> Welcome <strong>{username}</strong>!</button>
+<button class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class=caret></span></button>
+<ul class=dropdown-menu>
+		<li id='access_profile'><a href="{profile_url}"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
+		<li class="divider"></li>
+        <li id='access_logout'><a href="{logout_url}" accesskey="l"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+</ul>
+</div>
+
+<!--%%tpl_access_welcome-->
+
+
+
+<!--%tpl_access_profile_form-->
+<form name="ajaxform" id="ajaxform" method=post>
+<table class="table table-condensed">
+<tr class=even><td><label for=username{id}>Username</label></td>
+	<td><input id=username{id} type="text"  class="textfield" value="{username}" name="username"  /></td>
+</tr>
+<tr class=odd><td>	 <label>First Name</label></td>
+	 <td><input type="text"  class="textfield" value="{first_name}" name="first_name"  /></td>
+</tr>
+<tr class=even><td>	 <label>Last Name</label></td>
+	 <td><input type="text"  class="textfield" value="{last_name}" name="last_name"  /></td>
+</tr>
+<tr class=odd><td>	 <label>Password</label></td>
+	 <td><input type="password"  class="textfield" name="newpassword" /></td>
+</tr>
+<tr class=even><td>	 <label>Email</label></td>
+<td>	 <input type="text"  class="textfield" name="email" value="{email}" /></td>
+</tr>
+<tr><td colspan=2>	 <input type="submit" value="Save" /></td></tr>
+</table>
+	</form>
+<!--%%tpl_access_profile_form-->

@@ -1,0 +1,95 @@
+<!--%tpl_acl_roles-->
+<h4>Select a role to manage</h4>
+<div>
+{content}
+</div>
+<!--%%tpl_acl_roles-->
+
+<!--%tpl_acl_perms-->
+<h4>Select a permission to manage:</h4>
+<div>
+{content}
+</div>
+<!--%%tpl_acl_perms-->
+
+<!--%tpl_acl_roles_permissions-->
+<div id="acl_user_summary">
+<h4>Managing User <i>{username}</i></h4>
+{content}
+</div>
+<!--%%tpl_acl_roles_permissions-->
+
+<!--%tpl_acl_perms_edit-->
+<div id='{id}' class='well' style='color:#555; margin:5px;'>
+<h4>Managing User Permissions for <i>{username}</i></h4>
+
+{content}
+</div>
+<!--%%tpl_acl_perms_edit-->
+
+<!--%tpl_acl_roles_edit-->
+<div id='{id}' class='well' style='color:#555; margin:5px;'>
+<h4>Managing User Roles for <i>{username}</i></h4>
+
+{content}
+</div>
+<!--%%tpl_acl_roles_edit-->
+
+<!--%tpl_acl_roles_available-->
+<div class="col-md-3">
+<ul class="list-group">
+<li class="list-group-item">Available <a class="pull-right button light-gray btn-xs btn-primary" name="New" href="{url}" >New</a></li>
+<!--%tpl_repeat_acl_roles-->
+<li class="list-group-item">{role}</li>
+<!--%%tpl_repeat_acl_roles-->
+{acl_roles}
+</ul>
+
+</div>
+<!--%%tpl_acl_roles_available-->
+
+<!--%tpl_acl_perms_available-->
+<div class="panel panel-default">
+<div class="panel-heading">Permissions
+	<div class="acl_commands">
+		<a class="button light-gray btn btn-primary" name="New" href="{url}" >New</a>
+	</div>
+</div>
+<ul class="list-group">
+<!--%tpl_repeat_acl_perms-->
+<li class="list-group-item">{perm}</li>
+<!--%%tpl_repeat_acl_perms-->
+{acl_perms}
+</ul>
+
+</div>
+<!--%%tpl_acl_perms_available-->
+
+<!--%tpl_acl_roles_list-->
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Assigned Roles</div>
+<ul class="list-group">
+<!--%tpl_repeat_acl_roles-->
+<li class="list-group-item">{role}</li>
+<!--%%tpl_repeat_acl_roles-->
+{acl_roles}
+</ul>
+
+</div>
+<!--%%tpl_acl_roles_list-->
+
+<!--%tpl_acl_permissions_list-->
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Assigned Permissions</div>
+
+<ul class="list-group">
+<!--%tpl_repeat_acl_permissions-->
+<li class="list-group-item">{permissions}</li>
+<!--%%tpl_repeat_acl_permissions-->
+{acl_permissions}
+</ul>
+
+</div>
+<!--%%tpl_acl_permissions_list-->

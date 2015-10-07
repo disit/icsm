@@ -1,0 +1,1375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Icaro Supervisor & Monitor (ICSM).
+   Copyright (C) 2015 DISIT Lab http://www.disit.org - University of Florence
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; either version 2
+   of the License, or (at your option) any later version.
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="contact">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="contact_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="id">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="alias">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contactgroups" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contactgroups_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_notifications_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_notification_period" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_notifications_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_notification_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_notification_period" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_notification_commands" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_notification_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_notification_commands_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_notification_commands" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="can_submit_commands" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_notification_commands_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retain_nonstatus_information" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retain_status_information" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="email">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="pager">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address2">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address3">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address4">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address5">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address6">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_template" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_variables" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="register" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_template_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="access_group" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="last_modified">
+					<xs:simpleType>
+						<xs:restriction base="xs:dateTime">
+							<xs:minInclusive value="1000-01-01T00:00:00"/>
+							<xs:maxInclusive value="9999-12-31T23:59:59"/>
+							<xs:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="config_id" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="tbl_contact_PrimaryKey_1">
+			<xs:selector xpath="tbl_contact"/>
+			<xs:field xpath="id"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="host">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="host_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="id">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="alias">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="address">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="display_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="parents" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="hostgroups" type="xs:string"/>
+				<xs:element name="parents_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_command">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="65535"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="hostgroups_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_template" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="initial_state">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_template_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_interval" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="max_check_attempts" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active_checks_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retry_interval" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_period" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="passive_checks_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_freshness" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="obsess_over_host" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="event_handler" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="freshness_threshold" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="event_handler_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="high_flap_threshold" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="low_flap_threshold" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="flap_detection_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="flap_detection_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="process_perf_data" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contacts" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retain_nonstatus_information" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retain_status_information" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contact_groups" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contacts_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contact_groups_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notification_interval" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="first_notification_delay" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notification_period" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notification_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notifications_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="stalking_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="action_url">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes_url">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="icon_image">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="500"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="icon_image_alt">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="_x0032_d_coords">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="statusmap_image">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="vrml_image">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="_x0033_d_coords">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_variables" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="register" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="access_group" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="last_modified">
+					<xs:simpleType>
+						<xs:restriction base="xs:dateTime">
+							<xs:minInclusive value="1000-01-01T00:00:00"/>
+							<xs:maxInclusive value="9999-12-31T23:59:59"/>
+							<xs:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="config_id" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="tbl_host_PrimaryKey_1">
+			<xs:selector xpath="tbl_host"/>
+			<xs:field xpath="id"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="hostgroup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hostgroup_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="id">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="alias">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="hostgroup_members">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="members">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="action_url">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes_url">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="register" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="access_group" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="last_modified">
+					<xs:simpleType>
+						<xs:restriction base="xs:dateTime">
+							<xs:minInclusive value="1000-01-01T00:00:00"/>
+							<xs:maxInclusive value="9999-12-31T23:59:59"/>
+							<xs:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="config_id" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="tbl_hostgroup_PrimaryKey_1">
+			<xs:selector xpath="tbl_hostgroup"/>
+			<xs:field xpath="id"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="service">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="config_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="id">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_name" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="host_name_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="hostgroup_name" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="hostgroup_name_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="display_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="service_description">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="servicegroups" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="servicegroups_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_template" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_command">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="65535"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_template_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="initial_state">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="is_volatile" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_interval" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="max_check_attempts" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active_checks_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retry_interval" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_period" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="passive_checks_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="check_freshness" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="obsess_over_service" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="parallelize_check" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="event_handler" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="freshness_threshold" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="event_handler_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="high_flap_threshold" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="low_flap_threshold" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="flap_detection_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="flap_detection_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="process_perf_data" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notification_interval" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retain_nonstatus_information" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="retain_status_information" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="first_notification_delay" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notification_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notification_period" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:int">
+							<xs:minInclusive value="-2147483648"/>
+							<xs:maxInclusive value="2147483647"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contacts" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notifications_enabled" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contact_groups" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contacts_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="contact_groups_tploptions" default="2">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="stalking_options">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="20"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="action_url">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes_url">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="icon_image">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="500"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="icon_image_alt">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="use_variables" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="register" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="access_group" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="last_modified">
+					<xs:simpleType>
+						<xs:restriction base="xs:dateTime">
+							<xs:minInclusive value="1000-01-01T00:00:00"/>
+							<xs:maxInclusive value="9999-12-31T23:59:59"/>
+							<xs:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="config_id" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="import_hash">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="tbl_service_PrimaryKey_1">
+			<xs:selector xpath="tbl_service"/>
+			<xs:field xpath="id"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="servicegroup">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="alias">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="servicegroup_name">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="members" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="servicegroup_members" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="action_url" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="notes_url" nillable="true">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:maxLength value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="active" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="register" default="1">
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="access_group" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedInt">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="4294967295"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="last_modified">
+					<xs:simpleType>
+						<xs:restriction base="xs:dateTime">
+							<xs:minInclusive value="1000-01-01T00:00:00"/>
+							<xs:maxInclusive value="9999-12-31T23:59:59"/>
+							<xs:pattern value="\p{Nd}{4}-\p{Nd}{2}-\p{Nd}{2}T\p{Nd}{2}:\p{Nd}{2}:\p{Nd}{2}"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="config_id" default="0">
+					<xs:simpleType>
+						<xs:restriction base="xs:unsignedByte">
+							<xs:minInclusive value="0"/>
+							<xs:maxInclusive value="255"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:key name="tbl_servicegroup_PrimaryKey_1">
+			<xs:selector xpath="tbl_servicegroup"/>
+			<xs:field xpath="id"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="nagios">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="host" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="service" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="hostgroup" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="servicegroup" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="contact" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

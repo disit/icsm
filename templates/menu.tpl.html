@@ -1,0 +1,114 @@
+<!--%tpl_menu_bar-->
+<ul class="nav navbar-nav side-nav">
+<!--%tpl_repeat_menu_bar_data-->
+<li class="{class}" id="{id}">
+<a href="{url}" class="{link_class}" {link_attr}>{icon} {title} <b class={caret}></b></a>
+<!--%tpl_repeat_submenu_bar{id}-->
+		<ul id="{subid}DIV" class=dropdown-menu>
+		<!--%tpl_repeat_submenu_items{subid}-->
+		<li><a href="{suburl}">{subtitle}</a></li>
+		<!--%%tpl_repeat_submenu_items{subid}-->
+		{submenu_items{subid}}
+		</ul>
+<!--%%tpl_repeat_submenu_bar{id}-->
+{submenu_bar{id}}
+</li>
+<!--%%tpl_repeat_menu_bar_data-->
+{menu_bar_data}
+</ul>
+<!--%%tpl_menu_bar-->
+
+<!--%tpl_nav_bar-->
+<nav class="navbar navbar-default" role="navigation">
+  <div id={id} class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+     <a class="navbar-brand" href="#">{brand}</a>
+    </div>
+<ul class="nav navbar-nav">
+<!--%tpl_repeat_nav_bar-->
+<li class="{class}" id="{lid}">
+<a href="{url}" class="{link_class}" {link_attr}><i class="{icon}"></i> {title} <b class={caret}></b></a>
+{sublevel}
+</li>
+<!--%%tpl_repeat_nav_bar-->
+{nav_bar}
+</ul>
+ 
+  </div><!-- /.container-fluid -->
+</nav>
+<!--%%tpl_nav_bar-->
+
+
+<!--%tpl_submenu-->
+<ul id="{id}" class="{class}">
+<!--%tpl_repeat_submenu-->
+<li class="{lclass}" id="{lid}">
+<a href="{url}" class="{link_class}" {link_attr}><i class="{icon}"></i> {title} <b class={caret}></b></a>
+</li>
+<!--%%tpl_repeat_submenu-->
+{submenu}	
+</ul>
+<!--%%tpl_submenu-->
+
+<!--%tpl_button_bar-->
+<div class="big-button_bar" id="{id}" >
+<!--%tpl_repeat_button_bar-->    
+    <a class="button large {class}" id="{id}" href="{url}" {link_attr}>
+      <i class="{icon}"></i>
+      <span>{title}</span>
+    </a>
+<!--%%tpl_repeat_button_bar-->  
+{button_bar}  
+  </div>
+<!--%%tpl_button_bar-->
+
+<!--%tpl_small_button_bar-->
+<div class="small-button_bar" id="{id}" >
+<!--%tpl_repeat_small_button_bar-->    
+    <a class="button small {class}" href="{url}" {link_attr}>
+      <i class="{icon}"></i>
+      <div class=button-label>{title}</div>
+    </a>
+<!--%%tpl_repeat_small_button_bar-->  
+{small_button_bar}  
+  </div>
+<!--%%tpl_small_button_bar-->
+
+<!--%tpl_menu_pills-->
+<div id={id} class="navbar {class}">
+<ul class="nav nav-pills">
+<!--%tpl_repeat_menu_pills_data-->
+<li class="{class}" id="{id}"><a href="{url}" class="{link_class}" {link_attr}>{title}</a></li>
+<!--%%tpl_repeat_menu_pills_data-->
+{menu_pills_data}
+</ul>
+</div>
+<!--%%tpl_menu_pills-->
+
+
+<!--%tpl_menu_group-->
+<div id={id} class="btn-group {class}">
+<!--%tpl_repeat_menu_group_data-->
+<a class="btn btn-default {class}" id="{id}" href="{url}" {link_attr}>{title}</a></li>
+<!--%%tpl_repeat_menu_group_data-->
+{menu_group_data}
+</div>
+<!--%%tpl_menu_group-->
+
+
+<!--%tpl_tab_menu-->
+<div id={id}_tabs>
+ 		<ul class="nav nav-tabs">
+			<!--%tpl_repeat_tab_menu-->
+			<li class="{class}">{icon}<a href="{url}" class="{link_class}" data-toggle={tab} {link_attr}>{title}</a></li>
+			<!--%%tpl_repeat_tab_menu-->
+  			{tab_menu}	
+		</ul>
+</div>
+<script type="text/javascript"> 
+$(document).ready(function () {
+        	$('#{id}_tabs').tab();
+        	});
+</script>
+<!--%%tpl_tab_menu-->

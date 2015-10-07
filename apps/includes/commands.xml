@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+  <command>
+    <name>avgCPU%1m</name>
+    <plugin>check_php</plugin>
+  </command>
+  <command>
+    <name>avgCPU</name>
+    <plugin>check_php</plugin>
+  </command>
+  <command>
+    <name>avgMem1m%1m</name>
+    <plugin>check_php</plugin>
+  </command>
+  <command>
+    <name>avgMem1m</name>
+    <plugin>check_php</plugin>
+  </command>
+   <command>
+    <name>checkHttp</name>
+    <plugin>check_php</plugin>
+  </command>
+</commands>

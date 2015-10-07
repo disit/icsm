@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--
+   Icaro Supervisor & Monitor (ICSM).
+   Copyright (C) 2015 DISIT Lab http://www.disit.org - University of Florence
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; either version 2
+   of the License, or (at your option) any later version.
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xs:element name="avg" type="op"/>
+    <xs:element name="const">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="val"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="div" type="op2"/>
+    <xs:element name="lmetric">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="1"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="measure">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="lmetric"/>
+                <xs:element ref="perfdata"/>
+                <xs:element ref="timeinterval" minOccurs="0"/>
+                <xs:element ref="operator"/>
+            </xs:sequence>
+            <xs:attribute name="multivalue" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="avg"/>
+                        <xs:enumeration value="min"/>
+                        <xs:enumeration value="max"/>
+                        <xs:enumeration value="sum"/>
+                        <xs:enumeration value=""/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="metric">
+        <xs:complexType>
+            <xs:complexContent>
+                <xs:extension base="op">
+                    <xs:attribute name="name" type="xs:string" use="required"/>
+                    <xs:attribute name="unit" type="xs:string" use="optional"/>
+                </xs:extension>
+            </xs:complexContent>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="metrics">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="hostgroupmetrics"/>
+                <xs:element ref="servicemetrics"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="operator">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="avg"/>
+                <xs:enumeration value="max"/>
+                <xs:enumeration value="min"/>
+                <xs:enumeration value="last"/>
+                <xs:enumeration value="sum"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="perfdata" type="xs:string"/>
+    <xs:element name="sum" type="op"/>
+    <xs:element name="timeinterval">
+        <xs:complexType mixed="true">
+            <xs:attribute name="unit" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="day"/>
+                        <xs:enumeration value="min"/>
+                        <xs:enumeration value="month"/>
+                        <xs:enumeration value="hour"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="val" type="xs:decimal"/>
+    <xs:complexType name="op">
+        <xs:choice maxOccurs="unbounded">
+            <xs:element ref="avg"/>
+            <xs:element ref="sum"/>
+            <xs:element ref="mul"/>
+            <xs:element ref="div"/>
+            <xs:element ref="sub"/>
+            <xs:element ref="const"/>
+            <xs:element ref="measure"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:element name="mul" type="op"/>
+    <xs:element name="sub" type="op2"/>
+    <xs:complexType name="op2">
+        <xs:choice maxOccurs="2">
+            <xs:element ref="avg"/>
+            <xs:element ref="sum"/>
+            <xs:element ref="mul"/>
+            <xs:element ref="div"/>
+            <xs:element ref="sub"/>
+            <xs:element ref="const"/>
+            <xs:element ref="measure"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:element name="servicemetrics">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="servicegroup" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="servicegroup">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="metric" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="group" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="hostgroup">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="metric" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="group" type="xs:string" use="required"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="hostgroupmetrics">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="hostgroup" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

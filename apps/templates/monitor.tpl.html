@@ -1,0 +1,305 @@
+<!--%tpl_monitor_data-->
+<div class="segment_entry">
+					<div class='col-xs-6 col-md-12'><p><b class="label label-default">Monitor Id</b></p><p title="{mid}" class=monitor-data-value>{mid}</p></div>
+					<div class='col-xs-6 col-md-12'><p><b class="label label-default">Description</b></p><p title="{description}" class=monitor-data-value>{description}</p></div>
+					<div class='col-xs-6 col-md-12'><p><b class="label label-default">Status</b></p><p title="{status_text}" class="monitor-data-value"><i class="label label-{label_status}">{status_text}</i></p></div>
+					<div class='col-xs-6 col-md-12'><p><b class="label label-default">Tool</b></p><p title="{plugin}" class=monitor-data-value>{plugin}</p></div>
+					<div class='col-xs-6 col-md-12'><p><b class="label label-default">Last Update</b></p><p title="{lastupdate}" class=monitor-data-value>{lastupdate}</p></div>
+</div>
+<!--%%tpl_monitor_data-->
+
+<!--%tpl_controls_page-->
+<div id=Controls_container class=cView_panel>
+	<div class="panel panel-default">
+		  <div class="panel-heading">
+		Check List
+		</div>
+		<div class=panel-body>
+		<div class="{class}">
+			<div class=col-md-12>{selector}</div>
+		{controls}
+		</div>
+		</div>
+	</div>
+</div>
+<!--%%tpl_controls_page-->
+
+<!--%tpl_controls-group-->
+<div class="{class} row">
+<h4>{title}</h4>
+{controls}
+</div>
+<!--%%tpl_controls-group-->
+
+<!--%tpl_events_page-->
+<div id=Events_container class=cView_panel>
+		{events}
+</div>
+<!--%%tpl_events_page-->
+
+<!--%tpl_graphs_page-->
+<div id=Graphs_container class=cView_panel >
+<div class="row">
+	<div id=graphs_container-left class="col-md-8 col-lg-9">
+	<div class="panel panel-default">
+		  <div class="panel-heading">
+		    {graphs_icon} {graphs_main_title}
+		  </div>	
+		<div id=graphs_time>
+			<p class="label label-default">Server Time: <span id=graphs_start_time>{graphs_start_time}</span> - <span id=graphs_end_time>{graphs_end_time}</span>
+			</p>
+		</div>
+		<div id=graphs_container-rotor class="well"><img src="img/wait.gif" />Loading...</div>
+		<div id=graphs>
+			{graphs}
+		</div>
+	</div>
+	</div>
+	<div id=graphs_container-right class="col-md-4 col-lg-3">
+	
+		{address_selector}
+		{graph_calendar}
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		   {graphs_menu_icon} {graphs_title}
+		  </div>
+		  
+		  {graphs_menu}
+		 
+		</div>
+		
+	</div>
+</div>
+</div>
+<script text="text/javascript" >graphs_init();</script>
+<!--%%tpl_graphs_page-->
+
+<!--%tpl_graph_element-->
+<div class=graph_entry name='{url}'>
+			
+			<div class="graphArea">
+			<div class="ui-widget-header ui-corner-top"  >
+				<table border="0" width="100%">
+				<tbody>
+				<tr>
+					<td align="left">{title}: {subtitle}</td>
+					<td align="right" class=graph_menu_icons>
+					{add_dashboard}
+					<a href="javascript:graphXML('{xmlurl}','{graphurl}');" title="Export XML data"><img src="apps/img/XML16.png"></a>
+					<a href="javascript:graphZoom('{graphurl}');" title="Zoom into the Graph"><img src="img/zoom.png"></a>
+					<a href="javascript:graphReload('{graphurl}');" title="Reload Graph"><img src="img/reset.png"></a>
+					<a href="javascript:graph_remove('{dashurl}');" title="Remove Graph"><img src="img/menu/delete.png"></a>
+					</td>
+				</tr>
+				</tbody>
+				</table>
+			</div>
+			<div class="p4 gh ui-widget-content ui-corner-bottom">
+				<div style="position:relative;padding:2px">
+					<div start="{start}" end="{end}" style="width: 500px; height: 100px; position: absolute; top: 38px; left: 72px; cursor: e-resize;" class="graph" id="{graphurl}" title="Click to zoom in"></div>
+					<img name="{graphurl}" class="graph" src="{graphurl}/{start}/{end}">
+				</div>
+			</div>
+			</div>
+</div>
+<!--%%tpl_graph_element-->
+
+
+<!--%tpl_monitor_dashboard-->
+<div id="{id}" class="{class}">		 
+			
+				{element}
+			
+</div>
+<!--%%tpl_monitor_dashboard-->
+
+<!--%tpl_summary_element_dashboard-->
+		<div class="monitor_dashboard col-md-12 col-lg-12 {class}">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+		
+							{title} Utilization
+						</div>
+						<div class="panel-body">
+						{element}
+						</div>
+					</div>
+		</div>
+<!--%%tpl_summary_element_dashboard-->
+
+<!--%tpl_monitor_host_dashboard-->
+<div id="{id}" class="monitor_dashboard dashboard-element col-md-12 col-lg-12 col-xg-6">
+<div class="panel panel-default">
+		  <div class="panel-heading">
+		   <i class="sm-icon {icon}"></i> {board_title}{controls}
+		  </div>
+		<div class="panel-body">
+		<div class=row>
+			
+			
+			<div class=col-md-12>
+				{meters_element_dashboard}
+			</div>
+		</div>
+		<hr style="border-top:1px solid black;">
+		<div class="graphs col-md-6 col-lg-6">
+				{graph_element_dashboard}
+		</div>
+	</div>
+</div>
+
+</div>
+<!--%%tpl_monitor_host_dashboard-->
+
+<!--%tpl_graph_element_dashboard-->
+		<div class="graph_entry " name="{dashurl}">
+					
+					
+					<div class="panel panel-primary">
+						<div class="graph_menu panel-heading">
+								<span class=graph_menu_icons>
+										<a href="javascript:graphZoom('{graphurl}');" title="Zoom into the Graph"><img src="img/zoom.png"></a>
+									<!-- <a href="javascript:graph_remove('{dashurl}');" title="Remove Graph"><img src="img/menu/delete.png"></a> -->
+								</span>
+								<div class="graphArea">
+						{title}: {subtitle}
+					</div>
+						</div>
+						<div class="panel-body graph_img">
+							 <div start="{start}" end="{end}" style="display:none;" class="graph" id="{graphurl}" ></div>
+							<img name="{graphurl}" class="graph" src="{graphurl}">
+						</div>
+					</div>
+		</div>
+<!--%%tpl_graph_element_dashboard-->
+
+<!--%tpl_graph_img-->
+			<div class="graph_img">
+							<span class=graph_menu_icons>
+										<a href="javascript:graphZoom('{graphurl}');" title="Zoom into the Graph"><img src="img/zoom.png"></a>
+							</span>
+							<div start="{start}" end="{end}" style="display:none;" class="graph" id="{graphurl}" ></div>
+							<img name="{graphurl}" class="graph" src="{graphurl}">
+			</div>		
+<!--%%tpl_graph_img-->
+
+<!--%tpl_services_overall_dashboard_table-->
+<div id="services_overall_dashboard" class='monitor_overall_dashboard'>
+
+<div class="col-md-12 col-lg-12">
+<table class="table">
+<tr><th>OK</th><th>Crit</th><th>Warn</th><th>Unkn</th><th>Total</th></tr>
+<tr><td ><p class="label label-success">{OK}</p></td>
+	<td><p class="label label-danger">{Crit}</p></td>
+	<td><p class="label label-warning">{Warn}</p></td>
+	<td><p class="label label-default">{Unkn}</p></td>
+	<td><b>{Total}</b></td>
+</tr>
+</table>
+</div>
+<div class='pull-right page-link'>View details <a href='{page}'><i class='glyphicon glyphicon-circle-arrow-right'></i></a></div>
+</div>
+<!--%%tpl_services_overall_dashboard_table-->
+
+<!--%tpl_metric_pie-->
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" id="{title}">
+<div id="{id}_{title}_pie" class="monitor_pie" style="width:100%;height:200px;"></div>
+
+</div>
+<script type="text/javascript">
+  monitor_do_pie("{id}_{title}_pie","{Name}",[[['OK',{OK}],['Crit',{Critical}],['Warn',{Warning}],['Unkn',{Unknown}]]],[ "#5cb85c", "#d9534f", "#f0ad4e", "#999"]);
+</script>
+
+<!--%%tpl_metric_pie-->
+
+<!--%tpl_meter-->
+<div class="p4 gh" style="text-align:center;">
+			<div id="{id}" unit="{unit}" class="meter {type}" warning="{warning}" critical="{critical}" min="{min}" max="{max}" value="{value}" title="{title}"></div>
+			</div>
+			<script>
+			var name = "{id}";
+			var min ={min}/1;
+			var max = {max}/1;
+			var warn = {warning}/100;
+			var crit = {critical}/100;
+			var label = "{unit}";
+			var value = {value}/1.;
+			meters_createGauge(name, label, min, max, warn, crit, value);
+			</script>
+<!--%%tpl_meter-->
+
+<!--%tpl_meter_element-->
+<div class="monitor_meter col-xg-2 col-lg-3 col-md-4 col-sm-4 col-xs-4">
+			<div class="ui-widget-header ui-corner-top"  >
+				<div class=title>{title}</div>
+				<div class=meter-metric-name>{metric} ({unit})</div> 
+			</div>
+			<div class="p4 gh ui-widget-content ui-corner-bottom ">
+			<div id="{id}" unit="{unit}" class="meter {type}" warning="{warning}" critical="{critical}" min="{min}" max="{max}" value="{value}" title="{title}"></div>
+			</div>
+			<script>
+			var name = "{id}";
+			var min ={min}/1;
+			var max = {max}/1;
+			var warn = {warning}/100;
+			var crit = {critical}/100;
+			var label = "{unit}";
+			var value = {value}/1.;
+			meters_createGauge(name, label, min, max, warn, crit, value);
+			</script>
+</div>
+<!--%%tpl_meter_element-->
+
+<!--%tpl_meters_page-->
+
+<div id=Meters_container class="cView_panel" >
+<div class="panel panel-default">
+		  <div class="panel-heading">
+		Meters List
+		</div>
+		<div class=panel-body>
+<div id=Meters_bar class=row>
+	<div id=Meters_ip_selector class=col-md-6>{selector}</div>
+</div>
+<div id=meter_time><p class="label label-default">Time: <span id=meters_time>{time}</span></p></div>
+{meters}
+</div>
+</div>
+
+<!--%tpl_meters-group-->
+<div class="{class} row">
+<h4>{title}</h4>
+{meters}
+</div>
+<!--%%tpl_meters-group-->
+
+<script>
+var refreshUrl="{refreshUrl}";
+meters_init();
+</script>
+
+<!--%%tpl_meters_page-->
+
+<!--%tpl_monitor_console-->
+<div id=Monitor_console class="cView_panel" >
+ <div id="header">
+           
+           
+ </div>
+ <pre>
+ Monitor Console
+ Running command: {cmd}/{id}
+ Waiting for data...
+ 
+ <span id="tailLogTexto"></span>
+ </pre>
+</div>
+<script>
+
+$(document).ready(
+		function(){
+		//	monitor_console_trigger("{cmd}",{id});
+			}
+		);
+</script>
+<!--%%tpl_monitor_console-->

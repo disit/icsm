@@ -1,0 +1,295 @@
+<!--%tpl_configuration_queue_entries-->
+ <div id=configuration_cmd_limiter class=row><div class=col-md-12>{limiter}</div></div>
+ <div id=configuration_results>{entries}{pagination}</div>
+<!--%%tpl_configuration_queue_entries-->
+
+<!--%tpl_configuration_entries-->
+ <div id=configuration_cmd_filters class=row><div class=col-md-12>{filters}</div></div>
+ <div id=configuration_results>{entries}{pagination}</div>
+<!--%%tpl_configuration_entries-->
+
+<!--%tpl_configuration_history-->
+<div id=Configuration_History>
+ <div id=configuration_cmd class=row><div class=col-md-12>{limiter}</div></div>
+ <div id=configuration_results>{entries}{pagination}</div>
+ </div>
+<div id="DataModal" class="modal fade"><div class=modal-body></div>
+</div>
+<!--%%tpl_configuration_history-->
+
+<!--%tpl_configuration_data_dlg-->
+<div class="modal fade" id="{id}" tabindex="-1" role="dialog" aria-labelledby="{id}-Label" aria-hidden="true">
+  <div class="modal-dialog">
+     <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">{title}</h4>
+        </div>
+        <div class="modal-body">
+            {body}
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default button light-gray" data-dismiss="modal">Close</button>
+        </div>
+    </div>
+    </div>
+</div>
+<!--%%tpl_configuration_data_dlg-->
+<!--%tpl_configuration_data_remote_Dlg-->
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                 <h4 class="modal-title">{title}</h4>
+            </div>
+            <div class="modal-body">{body}</div>
+            <div class="modal-footer">
+                 <button type="button" class="btn btn-default button light-gray" data-dismiss="modal">Close</button>
+            </div>
+        
+<!--%%tpl_configuration_data_remote_Dlg-->
+
+<!--%tpl_configuration_data-->
+<div class="segment_entry">
+			<div class='col-xs-6 col-md-12'><p><b class="label label-default">{label_bid}</b></p><p title="{bid}" class=configuration-data-value>{bid}</p></div>
+			<div class='col-xs-6 col-md-12'><p><b class="label label-default">{label_identifier}</b></p><p title="{identifier}" class=configuration-data-value>{identifier}</p></div>
+			<div class='col-xs-6 col-md-12'><p><b class="label label-default">{label_name}</b></p><p title="{name}" class=configuration-data-value>{name}</p></div>
+			<div class='col-xs-6 col-md-12'><p><b class="label label-default">{label_description}</b></p><p title="{description}" class=configuration-data-value>{description}</p></div>
+			<div class='col-xs-6 col-md-12'><p><b class="label label-default">{label_contacts}</b></p><p title="{contacts}" class=configuration-data-value>{contacts}</p></div>
+			<div class='col-xs-6 col-md-12'><p><b class="label label-default">{label_type}</b></p><p title="{type}" class=configuration-data-value>{type}</p></div>		
+</div>
+<!--%%tpl_configuration_data-->
+
+
+<!-- <div class="page-header">
+  <h1>{name} <small>{identifier}</small></h1>
+</div> -->
+<!--%tpl_configuration_page-->
+<div id=configuration_container>
+<div class="row">
+	
+	<div id=configuration_container-left class=col-md-3>
+
+		<div id="ConfigurationStructure" class="panel panel-primary">
+		  <div class="panel-heading">
+		    <img src="img/model_structure.png" /> Structure ({name})
+		  </div>
+		  <div class="" style="overflow:auto">
+		    <div id=configuration_tree></div>
+		  </div>
+		</div>
+			{description_data}
+	</div>
+	<div id=configuration_container-right class="col-md-9">
+		<div id=configuration_container-rotor class="span9 well"><img src="img/wait.gif" />Loading...</div>
+		<div id=configuration_data>{configuration_data}</div>
+	</div>
+	
+</div>
+</div>
+
+<!--%%tpl_configuration_page-->
+
+<!--%tpl_configuration_info-->
+<div class="col-md-6">
+			<div class="panel panel-default">
+		  		<div class="panel-heading">
+		    		<h4 class="panel-title">Configuration Data</h4>
+		  		</div>
+		  		<div class="panel-body" style="overflow:auto">
+				<div class=segment_entry>
+					<p><b>{label_identifier}</b>: {identifier}</p>
+					<p><b>{label_name}</b>: {name}</p>
+					<p><b>{label_description}</b>: {description}</p>
+					<p><b>{label_contacts}</b>: {contacts}</p>
+					<p><b>{label_type}</b>: {type}</p>
+				</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+		  		<div class="panel-heading">
+		    		<h4 class="panel-title">Monitor Data</h4>
+		  		</div>
+		  		<div class="panel-body" style="overflow:auto">
+				<div class=segment_entry>
+					<p><b>{label_identifier}</b>: {identifier}</p>
+					<p><b>{label_name}</b>: {name}</p>
+					<p><b>{label_description}</b>: {description}</p>
+					<p><b>{label_contacts}</b>: {contacts}</p>
+					<p><b>{label_type}</b>: {type}</p>
+				</div>
+				</div>
+			</div>
+		</div>
+<!--%%tpl_configuration_info-->
+
+<!--%tpl_segment_entry-->
+<div id="{id}" class="{class}">
+	<div class=row style='margin:0px;'>
+	<!--%tpl_repeat_entry-->
+		<div class="col-lg-4 col-md-6 col-xs-6">
+			<p><span class="label label-default">{label_key}</span></p><p title={title} class=entry_value>{value}</p>
+		</div>
+	<!--%%tpl_repeat_entry-->	
+	{entry}	
+	</div>
+	{childs}	
+</div>
+<!--%%tpl_segment_entry-->
+
+<!--%tpl_segment_info-->
+<div id="{id}" class="{class}">
+	<div class="panel panel-default">
+				<div class=panel-heading>{type} Details</div>
+				<div class="panel-body">
+				<div class="row">
+					<div id="logo" class="col-md-3 col-lg-3 col-xg-2">{picture}</div>
+					<div id="data"  class="col-md-9 col-lg-9 col-xg-10">
+						<table class="table table-striped table-condensed">
+						<thead><tr><th colspan=2>Description</th></tr></thead>
+						<tbody>
+						<!--%tpl_repeat_entry-->
+						<tr> 
+							<th>{label_key}</th><td title={title} class=entry_value>{value}</td>
+						</tr>
+						<!--%%tpl_repeat_entry-->	
+						{entry}	
+						</tbody>
+						<tfoot><tr><td colspan=2></td></tr></tfoot>
+						</table>
+					</div>
+				</div>
+				<div class=info-childs>
+					{childs}
+				</div>
+				</div>
+				
+	</div>
+</div>
+<!--%%tpl_segment_info-->
+
+<!--%tpl_sla_info-->
+<div id="{id}" class="{class}">
+	<div class="panel panel-default">
+				<div class=panel-heading>{type} Details</div>
+				<div class="panel-body">
+				
+					<div class=info-childs>
+					{childs}
+					</div>
+				</div>	
+	</div>
+</div>
+<!--%%tpl_sla_info-->
+
+<!--%tpl_metrics_panel-->
+<div id=Metrics_container class=cView_panel>
+		<h3>Metrics List</h3>
+		
+		{metrics}
+</div>
+<!--%%tpl_metrics_panel-->
+
+<!--%tpl_configurator_status_dashboard-->
+<div id="configurator_dashboard" class="dashboard-element col-md-12 col-lg-12 col-xg-6">
+<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    Configurator
+		  </div>
+		<div class="panel-body">
+<!--%tpl_repeat_configurator_status_dashboard_queue-->
+<div id="{id}" class="configurator_status_dashboard col-lg-6 col-md-12">
+	<h5><i class="configurator_queue_icon"></i> Queue Status</h5>
+	<div class="configurator_status">
+		<div class="configurator_status_info"><label style="float:left">Queue Length</label><span style="float:right" class="badge">{total}</span></div>
+	</div>
+	<div class="configurator_status_divider"><hr></div>
+	<div class="configurator_status">
+		<label>Latest ({timestamp})</label><div class="configurator_status_info"><label style="float:left">Sender</label><span style="float:right" class="">{sender_user}</span></div>
+		<div class="configurator_status_info"><label style="float:left">Monitor Id</label><span style="float:right" class="">{mid}</span></div>
+		<div class="configurator_status_info"><label style="float:left">Host address</label><span style="float:right" class="">{sender_ip}</span></div>
+		<div class="configurator_status_info"><label style="float:left">Status</label><span style="float:right" class="badge">{status}</span></div>
+	</div>
+</div>
+<!--%%tpl_repeat_configurator_status_dashboard_queue-->
+{configurator_status_dashboard_queue}
+
+<!--%tpl_repeat_configurator_status_dashboard_last-->
+<div id="{id}" class="configurator_status_dashboard col-lg-6 col-md-12">
+	<h5><i class="configurator_status_icon"></i> Configurations</h5>
+	<div class="configurator_status">
+		<div class="configurator_status_info"><label style="float:left">Total Configurations</label><span style="float:right" class="badge">{total}</span></div>
+	</div>
+	<div class="configurator_status_divider"><hr></div>
+	<div class="configurator_status">
+		<label>Latest</label>
+		<div class="configurator_status_info"><label style="float:left">Identifier</label><span class="" style="float:right">{identifier}</span></div>
+		<div class="configurator_status_info"><label style="float:left">Description</label><span class="" style="float:right">{description}</span></div>
+		<div class="configurator_status_info"><label style="float:left">Contacts</label><span class="" style="float:right">{contacts}</span></div>
+		<div class="configurator_status_info"><label style="float:left">Configuration ID</label><span class="" style="float:right">{cid}</span></div>
+	</div>
+</div>
+<!--%%tpl_repeat_configurator_status_dashboard_last-->
+{configurator_status_dashboard_last}
+</div>
+</div>
+</div>
+<!--%%tpl_configurator_status_dashboard-->
+
+
+<!--%tpl_configurator_menu_group-->
+<div id={id} class="btn-group btn-group-lg">
+<!--%tpl_repeat_configurator_menu_group-->
+<a class="button light-gray btn btn-default {class}" id="{id}" href="{url}" {link_attr}>{title}</a></li>
+<!--%%tpl_repeat_configurator_menu_group-->
+{configurator_menu_group}
+</div>
+<!--%%tpl_configurator_menu_group-->
+
+
+<!--%tpl_configurator_overall_dashboard-->
+<div id="configurator_overall_dashboard" class='configuration_overall_dashboard' >
+<div class="col-md-8 col-sm-8 col-xs-12">
+<table class="table">
+<tr><th>Business</th><th>System</th></tr>
+<tr><td><p class="label label-default">{Business}</p></td><td><p class="label label-default">{System}</p></td></tr>
+</table>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-12 well overall_value">
+{Total}
+</div>
+<div class='pull-right page-link'>View details <a href='{page}'><i class='glyphicon glyphicon-circle-arrow-right'></i></a></div>
+</div>
+<!--%%tpl_configurator_overall_dashboard-->
+
+<!--%tpl_hosts_overall_dashboard-->
+<div id="hosts_overall_dashboard" class='configuration_overall_dashboard'>
+
+<div class="col-md-8 col-sm-8 col-xs-12">
+<table class="table">
+<tr><th>Up</th><th>Down</th></tr>
+<tr><td ><p class="label label-success">{Up}</p></td><td><p class="label label-danger">{Down}</p></td></tr>
+</table>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-12 well overall_value">
+	{Total}
+</div>
+<div class='pull-right page-link'>View details <a href='{page}'><i class='glyphicon glyphicon-circle-arrow-right'></i></a></div>
+</div>
+<!--%%tpl_hosts_overall_dashboard-->
+
+<!--%tpl_vhosts_overall_dashboard-->
+<div id="vhosts_overall_dashboard" class='configuration_overall_dashboard'>
+<div class="col-md-8 col-sm-8 col-xs-12">
+<table class="table">
+<tr><th>Up</th><th>Down</th></tr>
+<tr><td ><p class="label label-success">{Up}</p></td><td><p class="label label-danger">{Down}</p></td></tr>
+</table>
+</div>
+<div class="col-md-4 col-sm-4 col-xs-12 well overall_value">
+{Total}
+</div>
+<div class='pull-right page-link'>View details <a href='{page}'><i class='glyphicon glyphicon-circle-arrow-right'></i></a></div>
+</div>
+<!--%%tpl_vhosts_overall_dashboard-->

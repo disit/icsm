@@ -1,0 +1,51 @@
+.sm-icon-notification
+{
+	background-image:url("../img/bell.png");
+	
+}
+
+li.notification_msg:not(:last-child)
+{
+	border-bottom: 1px solid #ccc;
+}
+
+.notification_unseen_msg
+{
+	background-color:#f7f7f7;
+}
+
+.notify-alert-icon
+{
+	width:24px;
+	height:24px;	
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+	background:no-repeat;
+	background-image:url("../img/alert.png");
+	background-size: 24px 24px;
+}
+
+.notify-message-icon
+{
+	width:24px;
+	height:24px;	
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+	background:no-repeat;
+	background-image:url("../img/message.png");
+	background-size: 24px 24px;
+}
+
+.notify-delete-icon
+{
+	width:16px;
+	height:16px;	
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+	background:no-repeat;
+	background-image:url("../img/delete.png");
+	background-size: 16px 16px;
+}

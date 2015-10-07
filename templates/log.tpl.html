@@ -1,0 +1,49 @@
+<!--%tpl_log_list-->
+<div class="tabs">
+  <ul>
+	<li id="tabs_title_status" class="selected"><a href="javascript:sm_switch_tab('status');">{label_status}</a></li>
+	<li id="tabs_title_email"><a href="javascript:sm_switch_tab('email');">{label_email}</a></li>
+	<li id="tabs_title_sms"><a href="javascript:sm_switch_tab('sms');">{label_sms}</a></li>
+  </ul>
+</div>
+<div class="tabs_content" id="tabs_content_status">
+{content_status}
+</div>
+<div class="tabs_content" id="tabs_content_email" style="display: none;">
+{content_email}
+</div>
+<div class="tabs_content" id="tabs_content_sms" style="display: none;">
+{content_sms}
+</div>
+
+<!--%%tpl_log_list-->
+
+<!--%tpl_log_entries-->
+{logtitle}
+{limiter}
+<div class=table-responsive>
+<table class="table table-striped">
+<thead>
+  <tr class="odd">
+    <th><b>{label_time}</b></th>
+    <th><b>{label_message}</b></th>
+    <th><b>{label_class}</b></th>
+    <th><b>{label_method}</b></th>
+  </tr>
+ </thead>
+ <tbody>
+  <!--%tpl_repeat_entries-->
+	<tr class="{class}">
+	  <td>{time}</td>
+	  <td>{message}</td>
+	  <td>{class}</td>
+	  <td>{method}</td>
+	</tr>
+  <!--%%tpl_repeat_entries-->
+  {entries}
+ </tbody>
+ 
+</table>
+</div>
+{pagination}
+<!--%%tpl_log_entries-->

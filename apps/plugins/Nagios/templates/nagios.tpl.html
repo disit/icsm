@@ -1,0 +1,45 @@
+<!--%tpl_monitor_tool_status_dashboard-->
+<div id="monitor_tool_dashboard" class="dashboard-element col-md-6 col-lg-6 col-xg-4">
+<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    Monitor Tools
+		  </div>
+		<div class="panel-body">
+<!--%tpl_repeat_monitor_tool_status_dashboard-->
+<div id="{id}" class="monitor_tool_dashboard col-lg-6  col-md-12 ">
+<div class="monitor_tool_logo"><img src="{img}" /></div>
+<div class="monitor_tool_status">
+	<div class="monitor_tool_status_info"><label style="float:left">Overall status</label><span style="float:right" class="label label-{status}">{status_msg}</span></div>
+</div>
+<div class="monitor_tool_divider" ><hr></div>
+<div class="monitor_tool_status">
+	<div class="monitor_tool_status_info"><label style="float:left">Version</label><span style="float:right">{version}</span></div>
+	<div class="monitor_tool_status_info"><label style="float:left">Host address</label><span style="float:right">{ip}</span></div>
+	<div class="monitor_tool_status_info"><label style="float:left">Response (ms)</label><span style="float:right">{response}</span></div>
+</div>
+</div>
+<!--%%tpl_repeat_monitor_tool_status_dashboard-->
+{monitor_tool_status_dashboard}
+</div>
+</div>
+</div>
+<!--%%tpl_monitor_tool_status_dashboard-->
+
+<!--%tpl_monitor_graph-->
+<div id="{id}" class="chart" style="height: 150px; width: 100%; position: relative;"></div>
+<script>
+	renderNagiosDaemonGraph("{id}","{title}",options);
+</script>
+<!--%%tpl_monitor_graph-->
+
+
+<!--%tpl_nagios_mail_body-->
+<h3 style="text-transform:capitalize;">{title}</h3>
+<!--%tpl_repeat_data-->
+<div style="display: block;	padding: 0px;	font-size: 12px;	line-height: 1.428571429; vertical-align: middle;	margin:0px">
+<b style="text-transform:capitalize;padding-right:5px;">{label}:</b><span style="color: #555;">{text}</span>
+</div>
+<!--%%tpl_repeat_data-->
+{data}
+
+<!--%%tpl_nagios_mail_body-->

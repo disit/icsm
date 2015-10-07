@@ -1,0 +1,1758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Icaro Supervisor & Monitor (ICSM).
+   Copyright (C) 2015 DISIT Lab http://www.disit.org - University of Florence
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; either version 2
+   of the License, or (at your option) any later version.
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+-->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap1" blackbox="0" uid="1" editable="1">
+		<properties ShowLibraryNameInHeader="1" SelectedLanguage="xslt2"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="57" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="148"/>
+					</targets>
+					<view ltx="484" lty="603" rbx="636" rby="621"/>
+					<data>
+						<constant value="vmhost" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="structure" library="core" uid="63" kind="29">
+					<properties/>
+					<view ltx="594" lty="728" rbx="696" rby="764"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1">
+								<entry name="value" inpkey="199" outkey="200"/>
+							</entry>
+						</root>
+						<wsdl/>
+						<variable datatype="string"/>
+						<parameter usageKind="variable"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="54" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="130"/>
+					</targets>
+					<view ltx="360" lty="299" rbx="480" rby="317"/>
+					<data>
+						<constant value=";" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="string-join" library="core" uid="56" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="131"/>
+						<datapoint pos="1" key="132"/>
+						<datapoint pos="2" key="133"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="134"/>
+					</targets>
+					<view ltx="445" lty="371" rbx="559" rby="444"/>
+				</component>
+				<component name="constant" library="core" uid="58" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="149"/>
+					</targets>
+					<view ltx="536" lty="669" rbx="674" rby="687"/>
+					<data>
+						<constant value="host" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="string-join" library="core" uid="64" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="197"/>
+						<datapoint pos="1" key="203"/>
+						<datapoint pos="2" key="195"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="193"/>
+					</targets>
+					<view ltx="454" lty="915" rbx="568" rby="988"/>
+				</component>
+				<component name="constant" library="core" uid="66" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="206"/>
+					</targets>
+					<view ltx="369" lty="865" rbx="489" rby="883"/>
+					<data>
+						<constant value=";" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="NodeName" library="user" blackbox="0" uid="124" kind="19" visible="0">
+					<view ltx="461" lty="1028" rbx="564" rby="1045"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="node" inpkey="546" componentid="125"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="547" componentid="115"/>
+						</root>
+					</data>
+				</component>
+				<component name="NodeName" library="user" blackbox="0" uid="131" kind="19" visible="0">
+					<view ltx="461" lty="1087" rbx="564" rby="1104"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="node" inpkey="548" componentid="125"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="549" componentid="115"/>
+						</root>
+					</data>
+				</component>
+				<component name="NodeName" library="user" blackbox="0" uid="136" kind="19" visible="0">
+					<view ltx="461" lty="1145" rbx="564" rby="1162"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="node" inpkey="550" componentid="125"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="result" outkey="551" componentid="115"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="141" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="554"/>
+					</targets>
+					<view ltx="620" lty="874" rbx="758" rby="892"/>
+					<data>
+						<constant value="host" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="142" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="555"/>
+					</targets>
+					<view ltx="620" lty="914" rbx="769" rby="932"/>
+					<data>
+						<constant value="device" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substring-after" library="core" uid="144" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="585"/>
+						<datapoint pos="1" key="586"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="587"/>
+					</targets>
+					<view ltx="571" lty="428" rbx="703" rby="484"/>
+				</component>
+				<component name="constant" library="core" uid="145" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="588"/>
+					</targets>
+					<view ltx="575" lty="500" rbx="698" rby="518"/>
+					<data>
+						<constant value="#" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="Contacts" library="user" blackbox="0" uid="30" kind="19" visible="0">
+					<view ltx="405" lty="95" rbx="546" rby="146"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="a" inpkey="90" componentid="28"/>
+							<entry name="valuetrue" inpkey="91" componentid="26"/>
+							<entry name="b" inpkey="92" componentid="27"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="contacts" outkey="93" componentid="29"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="147" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="590"/>
+					</targets>
+					<view ltx="605" lty="530" rbx="728" rby="548"/>
+					<data>
+						<constant value="#" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="149" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="595"/>
+					</targets>
+					<view ltx="583" lty="356" rbx="706" rby="374"/>
+					<data>
+						<constant value="#" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="Contacts" library="user" blackbox="0" uid="62" kind="19" visible="0">
+					<view ltx="387" lty="769" rbx="528" rby="820"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="a" inpkey="192" componentid="28"/>
+							<entry name="valuetrue" inpkey="204" componentid="26"/>
+							<entry name="b" inpkey="205" componentid="27"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="contacts" outkey="198" componentid="29"/>
+						</root>
+					</data>
+				</component>
+				<component name="Contacts" library="user" blackbox="0" uid="48" kind="19" visible="0">
+					<view ltx="360" lty="207" rbx="501" rby="258"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="a" inpkey="135" componentid="28"/>
+							<entry name="valuetrue" inpkey="136" componentid="26"/>
+							<entry name="b" inpkey="137" componentid="27"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="contacts" outkey="154" componentid="29"/>
+						</root>
+					</data>
+				</component>
+				<component name="Contacts" library="user" blackbox="0" uid="67" kind="19" visible="0">
+					<view ltx="387" lty="697" rbx="528" rby="748"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="a" inpkey="207" componentid="28"/>
+							<entry name="valuetrue" inpkey="209" componentid="26"/>
+							<entry name="b" inpkey="210" componentid="27"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="contacts" outkey="208" componentid="29"/>
+						</root>
+					</data>
+				</component>
+				<component name="structure" library="core" uid="61" kind="29">
+					<properties/>
+					<view ltx="599" lty="116" rbx="701" rby="152"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="document" ns="1" expanded="1">
+								<entry name="value" inpkey="155" outkey="156"/>
+							</entry>
+						</root>
+						<wsdl/>
+						<variable datatype="string"/>
+						<parameter usageKind="variable"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="155" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="643"/>
+					</targets>
+					<view ltx="513" lty="262" rbx="630" rby="280"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="exists" library="core" uid="154" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="640"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="641"/>
+					</targets>
+					<view ltx="536" lty="212" rbx="625" rby="251"/>
+				</component>
+				<component name="substring-after" library="core" uid="146" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="592"/>
+						<datapoint pos="1" key="591"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="589"/>
+					</targets>
+					<view ltx="601" lty="458" rbx="733" rby="514"/>
+				</component>
+				<component name="constant" library="core" uid="165" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="680"/>
+					</targets>
+					<view ltx="536" lty="796" rbx="693" rby="814"/>
+					<data>
+						<constant value="physical" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="166" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="699"/>
+					</targets>
+					<view ltx="570" lty="34" rbx="687" rby="52"/>
+					<data>
+						<constant datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="60" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="150"/>
+						<datapoint pos="1" key="151"/>
+						<datapoint pos="2" key="152"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="585" lty="287" rbx="678" rby="363"/>
+				</component>
+				<component name="if-else" library="core" uid="152" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="636"/>
+						<datapoint pos="1" key="637"/>
+						<datapoint pos="2" key="638"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="661" lty="212" rbx="758" rby="288"/>
+				</component>
+				<component name="substring-after" library="core" uid="148" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="594"/>
+						<datapoint pos="1" key="596"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="579" lty="284" rbx="711" rby="340"/>
+				</component>
+				<component name="Host2ServiceIpAddress" library="user" blackbox="0" uid="70" kind="19" visible="0">
+					<view ltx="405" lty="475" rbx="535" rby="526"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="valuetrue" inpkey="343" componentid="41"/>
+							<entry name="a" inpkey="346" componentid="40"/>
+							<entry name="b" inpkey="345" componentid="42"/>
+						</root>
+						<root rootindex="1">
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="output" componentid="43"/>
+						</root>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="139" kind="2">
+					<properties/>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="594" lty="392" rbx="747" rby="410"/>
+					<data>
+						<constant value="service" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="concat" library="core" uid="65" kind="5" growable="1" growablebasename="value">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="201"/>
+						<datapoint pos="1" key="196"/>
+						<datapoint pos="2" key="194"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="594" lty="831" rbx="687" rby="907"/>
+				</component>
+				<component name="constant" library="core" uid="140" kind="2">
+					<properties/>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="620" lty="466" rbx="767" rby="484"/>
+					<data>
+						<constant value="tenant" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="167" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="705"/>
+					</targets>
+					<view ltx="558" lty="-8" rbx="711" rby="10"/>
+					<data>
+						<constant value="System" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="schema-icaro-rdf" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="-29" lty="-8" rbx="281" rby="952"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+									<namespace uid="http://www.cloudicaro.it/cloud_ontology/core#"/>
+									<namespace/>
+									<namespace uid="http://xmlns.com/foaf/0.1/"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="4" expanded="1">
+								<entry name="document" ns="4" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="RDF" expanded="1">
+										<entry name="BusinessConfiguration" ns="1" expanded="1">
+											<entry name="hasPart" ns="1" expanded="1">
+												<entry name="IcaroApplication" ns="1" outkey="2">
+													<entry name="createdBy" ns="1">
+														<entry name="resource" type="attribute" outkey="139"/>
+													</entry>
+													<entry name="administeredBy" ns="1">
+														<entry name="resource" type="attribute" outkey="5"/>
+													</entry>
+													<entry name="needs" ns="1" expanded="1">
+														<entry name="IcaroService" ns="1" expanded="1">
+															<entry name="type" expanded="1">
+																<entry name="resource" type="attribute" outkey="8"/>
+															</entry>
+															<entry name="runsOnVM" ns="1" expanded="1">
+																<entry name="resource" type="attribute" outkey="9"/>
+															</entry>
+															<entry name="hasMonitorIPAddress" ns="1" outkey="613" expanded="1">
+																<entry name="#text" ns="2" outkey="642"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="IcaroTenant" ns="1" outkey="233">
+													<entry name="createdBy" ns="1" expanded="1">
+														<entry name="resource" type="attribute" outkey="295"/>
+													</entry>
+													<entry name="administeredBy" ns="1" expanded="1">
+														<entry name="resource" type="attribute" outkey="296"/>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="VirtualMachine" ns="1" outkey="16">
+											<entry name="about" type="attribute" outkey="17"/>
+											<entry name="hasName" ns="1" outkey="246"/>
+											<entry name="hasIdentifier" ns="1" outkey="247"/>
+											<entry name="hasNetworkAdapter" ns="1" expanded="1">
+												<entry name="NetworkAdapter" ns="1" expanded="1">
+													<entry name="hasIPAddress" ns="1" outkey="318"/>
+												</entry>
+											</entry>
+											<entry name="hasOS" ns="1">
+												<entry name="resource" type="attribute" outkey="65"/>
+											</entry>
+											<entry name="isPartOf" ns="1">
+												<entry name="resource" type="attribute" outkey="66"/>
+											</entry>
+											<entry name="isInDomain" ns="1" outkey="248"/>
+											<entry name="hasAuthUserName" ns="1" outkey="249"/>
+											<entry name="hasAuthUserPassword" ns="1" outkey="250"/>
+											<entry name="hasMonitorInfo" ns="1" expanded="1">
+												<entry name="MonitorInfo" ns="1" outkey="67" expanded="1">
+													<entry name="hasMetricName" ns="1" outkey="68"/>
+													<entry name="hasWarningValue" ns="1" outkey="69"/>
+													<entry name="hasCriticalValue" ns="1" outkey="70"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="HostMachine" ns="1" outkey="167">
+											<entry name="about" type="attribute" outkey="598"/>
+											<entry name="hasName" ns="1" outkey="251"/>
+											<entry name="hasIdentifier" ns="1" outkey="252"/>
+											<entry name="hasNetworkAdapter" ns="1" expanded="1">
+												<entry name="NetworkAdapter" ns="1" expanded="1">
+													<entry name="hasIPAddress" ns="1" outkey="319"/>
+												</entry>
+											</entry>
+											<entry name="hasOS" ns="1" expanded="1">
+												<entry name="resource" type="attribute" outkey="170"/>
+											</entry>
+											<entry name="isPartOf" ns="1" expanded="1">
+												<entry name="resource" type="attribute" outkey="171"/>
+											</entry>
+											<entry name="isInDomain" ns="1" outkey="253"/>
+											<entry name="hasAuthUserName" ns="1" outkey="254"/>
+											<entry name="hasAuthUserPassword" ns="1" outkey="255"/>
+											<entry name="hasMonitorInfo" ns="1" expanded="1">
+												<entry name="MonitorInfo" ns="1" outkey="172" expanded="1">
+													<entry name="hasMetricName" ns="1" outkey="173"/>
+													<entry name="hasWarningValue" ns="1" outkey="174"/>
+													<entry name="hasCriticalValue" ns="1" outkey="175"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="ExternalStorage" ns="1" outkey="374">
+											<entry name="about" type="attribute" outkey="532"/>
+											<entry name="hasName" ns="1" outkey="349"/>
+											<entry name="hasIdentifier" ns="1" outkey="350"/>
+											<entry name="hasModelName" ns="1" outkey="616"/>
+											<entry name="hasNetworkAdapter" ns="1" expanded="1">
+												<entry name="NetworkAdapter" ns="1" expanded="1">
+													<entry name="hasIPAddress" ns="1" outkey="375"/>
+												</entry>
+											</entry>
+											<entry name="hasMonitorInfo" ns="1" expanded="1">
+												<entry name="MonitorInfo" ns="1" outkey="376" expanded="1">
+													<entry name="hasMetricName" ns="1" outkey="377"/>
+													<entry name="hasArguments" ns="1" outkey="378"/>
+													<entry name="hasWarningValue" ns="1" outkey="379" expanded="1"/>
+													<entry name="hasCriticalValue" ns="1" outkey="381" expanded="1"/>
+													<entry name="hasMaxCheckAttempts" ns="1" outkey="383"/>
+													<entry name="hasCheckInterval" ns="1" outkey="384"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="Firewall" ns="1" outkey="433">
+											<entry name="about" type="attribute" outkey="533"/>
+											<entry name="hasName" ns="1" outkey="468"/>
+											<entry name="hasIdentifier" ns="1" outkey="469"/>
+											<entry name="hasModelName" ns="1" outkey="617"/>
+											<entry name="hasNetworkAdapter" ns="1" expanded="1">
+												<entry name="NetworkAdapter" ns="1" expanded="1">
+													<entry name="hasIPAddress" ns="1" outkey="470"/>
+												</entry>
+											</entry>
+											<entry name="hasMonitorInfo" ns="1" expanded="1">
+												<entry name="MonitorInfo" ns="1" outkey="471" expanded="1">
+													<entry name="hasMetricName" ns="1" outkey="472"/>
+													<entry name="hasArguments" ns="1" outkey="473"/>
+													<entry name="hasWarningValue" ns="1" outkey="474" expanded="1"/>
+													<entry name="hasCriticalValue" ns="1" outkey="476" expanded="1"/>
+													<entry name="hasMaxCheckAttempts" ns="1" outkey="478"/>
+													<entry name="hasCheckInterval" ns="1" outkey="479"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="Router" ns="1" outkey="480">
+											<entry name="about" type="attribute" outkey="534"/>
+											<entry name="hasName" ns="1" outkey="481"/>
+											<entry name="hasIdentifier" ns="1" outkey="482"/>
+											<entry name="hasModelName" ns="1" outkey="618"/>
+											<entry name="hasNetworkAdapter" ns="1" expanded="1">
+												<entry name="NetworkAdapter" ns="1" expanded="1">
+													<entry name="hasIPAddress" ns="1" outkey="483"/>
+												</entry>
+											</entry>
+											<entry name="hasMonitorInfo" ns="1" expanded="1">
+												<entry name="MonitorInfo" ns="1" outkey="484" expanded="1">
+													<entry name="hasMetricName" ns="1" outkey="485"/>
+													<entry name="hasArguments" ns="1" outkey="486"/>
+													<entry name="hasWarningValue" ns="1" outkey="487" expanded="1"/>
+													<entry name="hasCriticalValue" ns="1" outkey="489" expanded="1"/>
+													<entry name="hasMaxCheckAttempts" ns="1" outkey="491"/>
+													<entry name="hasCheckInterval" ns="1" outkey="492"/>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="DataCenter" ns="1" outkey="700" expanded="1">
+											<entry name="about" type="attribute" outkey="701"/>
+											<entry name="hasName" ns="1" outkey="702"/>
+											<entry name="hasIdentifier" ns="1" outkey="703"/>
+										</entry>
+										<entry name="User" ns="1">
+											<entry name="about" type="attribute" outkey="61"/>
+											<entry name="mbox" ns="3" outkey="62"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="e:\icaro\data\schema-icaro-rdf.xsd" inputinstance="e:\icaro\data\esempio-full.xml" outputinstance="e:\icaro\data\esempio-full-xlms.xml" instanceroot="{http://www.w3.org/1999/02/22-rdf-syntax-ns#}RDF"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="sm" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="787" lty="-8" rbx="1138" rby="965"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="configuration" inpkey="129" expanded="1">
+										<entry name="identifier" inpkey="18"/>
+										<entry name="description" inpkey="556"/>
+										<entry name="name" inpkey="557"/>
+										<entry name="contacts" inpkey="105" expanded="1"/>
+										<entry name="type" inpkey="704"/>
+										<entry name="applications">
+											<entry name="application" expanded="1">
+												<entry name="services">
+													<entry name="service" expanded="1">
+														<entry name="monitor_info" expanded="1">
+															<entry name="metrics" expanded="1">
+																<entry name="metric" expanded="1"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+										<entry name="tenants">
+											<entry name="tenant" expanded="1">
+												<entry name="monitor_info" expanded="1">
+													<entry name="metrics" expanded="1">
+														<entry name="metric" expanded="1">
+															<entry name="critical_value" expanded="1"/>
+															<entry name="warning_value" expanded="1"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="runOn" expanded="1"/>
+											</entry>
+										</entry>
+										<entry name="hosts">
+											<entry name="host" inpkey="33">
+												<entry name="id" inpkey="34"/>
+												<entry name="name" inpkey="223"/>
+												<entry name="os" inpkey="71"/>
+												<entry name="type" inpkey="52"/>
+												<entry name="ip_address" inpkey="72"/>
+												<entry name="monitor_info" expanded="1">
+													<entry name="type" type="attribute" inpkey="561"/>
+													<entry name="metrics" expanded="1">
+														<entry name="metric" inpkey="74" expanded="1">
+															<entry name="name" inpkey="75"/>
+															<entry name="critical_value" inpkey="76"/>
+															<entry name="warning_value" inpkey="77"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="parent_host" inpkey="73"/>
+												<entry name="domain_name" inpkey="224"/>
+												<entry name="auth_pwd" inpkey="225"/>
+												<entry name="auth_user" inpkey="226"/>
+											</entry>
+											<entry name="host" inpkey="157" expanded="1" clone="1">
+												<entry name="id" inpkey="158"/>
+												<entry name="name" inpkey="227"/>
+												<entry name="os" inpkey="159"/>
+												<entry name="type" inpkey="160"/>
+												<entry name="ip_address" inpkey="161"/>
+												<entry name="monitor_info">
+													<entry name="type" type="attribute" inpkey="562"/>
+													<entry name="metrics" expanded="1">
+														<entry name="metric" inpkey="163" expanded="1">
+															<entry name="name" inpkey="164"/>
+															<entry name="critical_value" inpkey="165"/>
+															<entry name="warning_value" inpkey="166"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="host_group" inpkey="162"/>
+												<entry name="domain_name" inpkey="228"/>
+												<entry name="auth_pwd" inpkey="229"/>
+												<entry name="auth_user" inpkey="230"/>
+												<entry name="description" inpkey="597"/>
+											</entry>
+										</entry>
+										<entry name="devices" expanded="1">
+											<entry name="device" inpkey="363" expanded="1">
+												<entry name="id" inpkey="353"/>
+												<entry name="device_type" inpkey="426"/>
+												<entry name="type" inpkey="677"/>
+												<entry name="ip_address" inpkey="364"/>
+												<entry name="name" inpkey="685"/>
+												<entry name="monitor_info" expanded="1">
+													<entry name="type" type="attribute" inpkey="563"/>
+													<entry name="metrics" expanded="1">
+														<entry name="metric" inpkey="365" expanded="1">
+															<entry name="name" inpkey="366"/>
+															<entry name="critical_value" inpkey="367" expanded="1"/>
+															<entry name="warning_value" inpkey="369" expanded="1"/>
+															<entry name="args" inpkey="371"/>
+															<entry name="max_check_attempts" inpkey="372"/>
+															<entry name="check_interval" inpkey="373"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="model" inpkey="686"/>
+												<entry name="description" inpkey="529"/>
+											</entry>
+											<entry name="device" inpkey="441" clone="1">
+												<entry name="id" inpkey="442"/>
+												<entry name="device_type" inpkey="434"/>
+												<entry name="type" inpkey="678"/>
+												<entry name="ip_address" inpkey="443"/>
+												<entry name="name" inpkey="687"/>
+												<entry name="monitor_info" expanded="1">
+													<entry name="type" type="attribute" inpkey="564"/>
+													<entry name="metrics">
+														<entry name="metric" inpkey="445" expanded="1">
+															<entry name="name" inpkey="446"/>
+															<entry name="critical_value" inpkey="447" expanded="1"/>
+															<entry name="warning_value" inpkey="449" expanded="1"/>
+															<entry name="args" inpkey="451"/>
+															<entry name="max_check_attempts" inpkey="452"/>
+															<entry name="check_interval" inpkey="453"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="model" inpkey="688"/>
+												<entry name="description" inpkey="530"/>
+											</entry>
+											<entry name="device" inpkey="454" expanded="1" clone="1">
+												<entry name="id" inpkey="455"/>
+												<entry name="device_type" inpkey="456"/>
+												<entry name="type" inpkey="679"/>
+												<entry name="ip_address" inpkey="457"/>
+												<entry name="name" inpkey="689"/>
+												<entry name="monitor_info" expanded="1">
+													<entry name="type" type="attribute" inpkey="565"/>
+													<entry name="metrics" expanded="1">
+														<entry name="metric" inpkey="459" expanded="1">
+															<entry name="name" inpkey="460"/>
+															<entry name="critical_value" inpkey="461" expanded="1"/>
+															<entry name="warning_value" inpkey="463" expanded="1"/>
+															<entry name="args" inpkey="465"/>
+															<entry name="max_check_attempts" inpkey="466"/>
+															<entry name="check_interval" inpkey="467"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="model" inpkey="690"/>
+												<entry name="description" inpkey="531"/>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="sm.xsd" outputinstance="sm.xml" instanceroot="{}configuration"/>
+						<wsdl/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="131" edgekey="140"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="90" edgekey="111"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="594" edgekey="599"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="345" edgekey="355"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="16">
+						<edges>
+							<edge vertexkey="33" edgekey="50"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="346" edgekey="356"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="61">
+						<edges>
+							<edge vertexkey="92" edgekey="94"/>
+							<edge vertexkey="137" edgekey="141"/>
+							<edge vertexkey="205" edgekey="256"/>
+							<edge vertexkey="210" edgekey="257"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="62">
+						<edges>
+							<edge vertexkey="91" edgekey="95"/>
+							<edge vertexkey="136" edgekey="142"/>
+							<edge vertexkey="209" edgekey="258"/>
+							<edge vertexkey="204" edgekey="259"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="65">
+						<edges>
+							<edge vertexkey="585" edgekey="600"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="66">
+						<edges>
+							<edge vertexkey="73" edgekey="85"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="67">
+						<edges>
+							<edge vertexkey="74" edgekey="86"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="68">
+						<edges>
+							<edge vertexkey="75" edgekey="87"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="69">
+						<edges>
+							<edge vertexkey="77" edgekey="88"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="70">
+						<edges>
+							<edge vertexkey="76" edgekey="89"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="93">
+						<edges>
+							<edge vertexkey="132" edgekey="143"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="130">
+						<edges>
+							<edge vertexkey="133" edgekey="144"/>
+							<edge vertexkey="151" edgekey="176"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="134">
+						<edges>
+							<edge vertexkey="152" edgekey="177"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="139">
+						<edges>
+							<edge vertexkey="135" edgekey="147"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="148">
+						<edges>
+							<edge vertexkey="52" edgekey="178"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="149">
+						<edges>
+							<edge vertexkey="160" edgekey="179"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="154">
+						<edges>
+							<edge vertexkey="155" edgekey="181"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="156">
+						<edges>
+							<edge vertexkey="150" edgekey="182"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="167">
+						<edges>
+							<edge vertexkey="157" edgekey="183"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="170">
+						<edges>
+							<edge vertexkey="592" edgekey="601"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="171">
+						<edges>
+							<edge vertexkey="162" edgekey="187"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="172">
+						<edges>
+							<edge vertexkey="163" edgekey="188"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="173">
+						<edges>
+							<edge vertexkey="164" edgekey="189"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="174">
+						<edges>
+							<edge vertexkey="166" edgekey="190"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="175">
+						<edges>
+							<edge vertexkey="165" edgekey="191"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="193">
+						<edges>
+							<edge vertexkey="194" edgekey="260"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="198">
+						<edges>
+							<edge vertexkey="199" edgekey="261"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="200">
+						<edges>
+							<edge vertexkey="201" edgekey="262"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="206">
+						<edges>
+							<edge vertexkey="196" edgekey="264"/>
+							<edge vertexkey="195" edgekey="265"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="208">
+						<edges>
+							<edge vertexkey="203" edgekey="266"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="233">
+						<edges>
+							<edge vertexkey="197" edgekey="270"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="246">
+						<edges>
+							<edge vertexkey="223" edgekey="283"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="247">
+						<edges>
+							<edge vertexkey="34" edgekey="284"/>
+							<edge vertexkey="343" edgekey="357"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="248">
+						<edges>
+							<edge vertexkey="224" edgekey="285"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="249">
+						<edges>
+							<edge vertexkey="226" edgekey="286"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="250">
+						<edges>
+							<edge vertexkey="225" edgekey="287"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="251">
+						<edges>
+							<edge vertexkey="227" edgekey="288"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="252">
+						<edges>
+							<edge vertexkey="158" edgekey="289"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="253">
+						<edges>
+							<edge vertexkey="228" edgekey="290"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="254">
+						<edges>
+							<edge vertexkey="230" edgekey="291"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="255">
+						<edges>
+							<edge vertexkey="229" edgekey="292"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="295">
+						<edges>
+							<edge vertexkey="192" edgekey="304"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="296">
+						<edges>
+							<edge vertexkey="207" edgekey="305"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="318">
+						<edges>
+							<edge vertexkey="72" edgekey="326"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="319">
+						<edges>
+							<edge vertexkey="161" edgekey="328"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="349">
+						<edges>
+							<edge vertexkey="685" edgekey="692"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="350">
+						<edges>
+							<edge vertexkey="353" edgekey="362"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="374">
+						<edges>
+							<edge vertexkey="363" edgekey="387"/>
+							<edge vertexkey="546" edgekey="570"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="375">
+						<edges>
+							<edge vertexkey="364" edgekey="388"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="376">
+						<edges>
+							<edge vertexkey="365" edgekey="389"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="377">
+						<edges>
+							<edge vertexkey="366" edgekey="390"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="378">
+						<edges>
+							<edge vertexkey="371" edgekey="391"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="379">
+						<edges>
+							<edge vertexkey="369" edgekey="621"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="381">
+						<edges>
+							<edge vertexkey="367" edgekey="622"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="383">
+						<edges>
+							<edge vertexkey="372" edgekey="394"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="384">
+						<edges>
+							<edge vertexkey="373" edgekey="395"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="433">
+						<edges>
+							<edge vertexkey="441" edgekey="502"/>
+							<edge vertexkey="548" edgekey="571"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="468">
+						<edges>
+							<edge vertexkey="687" edgekey="693"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="469">
+						<edges>
+							<edge vertexkey="442" edgekey="508"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="470">
+						<edges>
+							<edge vertexkey="443" edgekey="509"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="471">
+						<edges>
+							<edge vertexkey="445" edgekey="510"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="472">
+						<edges>
+							<edge vertexkey="446" edgekey="511"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="473">
+						<edges>
+							<edge vertexkey="451" edgekey="512"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="474">
+						<edges>
+							<edge vertexkey="449" edgekey="623"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="476">
+						<edges>
+							<edge vertexkey="447" edgekey="624"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="478">
+						<edges>
+							<edge vertexkey="452" edgekey="515"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="479">
+						<edges>
+							<edge vertexkey="453" edgekey="516"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="480">
+						<edges>
+							<edge vertexkey="454" edgekey="517"/>
+							<edge vertexkey="550" edgekey="572"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="481">
+						<edges>
+							<edge vertexkey="689" edgekey="694"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="482">
+						<edges>
+							<edge vertexkey="455" edgekey="520"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="483">
+						<edges>
+							<edge vertexkey="457" edgekey="521"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="484">
+						<edges>
+							<edge vertexkey="459" edgekey="522"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="485">
+						<edges>
+							<edge vertexkey="460" edgekey="523"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="486">
+						<edges>
+							<edge vertexkey="465" edgekey="524"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="487">
+						<edges>
+							<edge vertexkey="463" edgekey="625"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="489">
+						<edges>
+							<edge vertexkey="461" edgekey="626"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="491">
+						<edges>
+							<edge vertexkey="466" edgekey="527"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="492">
+						<edges>
+							<edge vertexkey="467" edgekey="528"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="532">
+						<edges>
+							<edge vertexkey="529" edgekey="535"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="533">
+						<edges>
+							<edge vertexkey="530" edgekey="536"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="534">
+						<edges>
+							<edge vertexkey="531" edgekey="537"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="547">
+						<edges>
+							<edge vertexkey="426" edgekey="573"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="549">
+						<edges>
+							<edge vertexkey="434" edgekey="574"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="551">
+						<edges>
+							<edge vertexkey="456" edgekey="575"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="554">
+						<edges>
+							<edge vertexkey="561" edgekey="578"/>
+							<edge vertexkey="562" edgekey="579"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="555">
+						<edges>
+							<edge vertexkey="563" edgekey="580"/>
+							<edge vertexkey="565" edgekey="581"/>
+							<edge vertexkey="564" edgekey="582"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="587">
+						<edges>
+							<edge vertexkey="71" edgekey="602"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="588">
+						<edges>
+							<edge vertexkey="586" edgekey="603"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="589">
+						<edges>
+							<edge vertexkey="159" edgekey="604"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="590">
+						<edges>
+							<edge vertexkey="591" edgekey="605"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="595">
+						<edges>
+							<edge vertexkey="596" edgekey="607"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="598">
+						<edges>
+							<edge vertexkey="597" edgekey="608"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="613">
+						<edges>
+							<edge vertexkey="640" edgekey="644"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="616">
+						<edges>
+							<edge vertexkey="686" edgekey="695"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="617">
+						<edges>
+							<edge vertexkey="688" edgekey="696"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="618">
+						<edges>
+							<edge vertexkey="690" edgekey="697"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="641">
+						<edges>
+							<edge vertexkey="636" edgekey="646"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="642">
+						<edges>
+							<edge vertexkey="637" edgekey="647"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="643">
+						<edges>
+							<edge vertexkey="638" edgekey="648"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="680">
+						<edges>
+							<edge vertexkey="678" edgekey="681"/>
+							<edge vertexkey="677" edgekey="682"/>
+							<edge vertexkey="679" edgekey="683"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="699">
+						<edges>
+							<edge vertexkey="105" edgekey="706"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="700">
+						<edges>
+							<edge vertexkey="129" edgekey="707"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="701">
+						<edges>
+							<edge vertexkey="556" edgekey="708"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="702">
+						<edges>
+							<edge vertexkey="557" edgekey="709"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="703">
+						<edges>
+							<edge vertexkey="18" edgekey="710"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="705">
+						<edges>
+							<edge vertexkey="704" edgekey="711"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="Contacts" library="user" blackbox="0" uid="23" editable="1" inline="1">
+		<properties/>
+		<structure>
+			<children>
+				<component name="valuetrue" library="core" uid="26" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view lty="50" rbx="94" rby="89"/>
+					<data>
+						<input datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="input" name="valuetrue"/>
+					</data>
+				</component>
+				<component name="b" library="core" uid="27" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="8"/>
+					</targets>
+					<view lty="100" rbx="55" rby="139"/>
+					<data>
+						<input datatype="anyURI"/>
+						<wsdl/>
+						<parameter usageKind="input" name="b"/>
+					</data>
+				</component>
+				<component name="a" library="core" uid="28" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view rbx="55" rby="39"/>
+					<data>
+						<input datatype="anyURI"/>
+						<wsdl/>
+						<parameter usageKind="input" name="a"/>
+					</data>
+				</component>
+				<component name="contacts" library="core" uid="29" kind="7">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<view ltx="686" rbx="756" rby="39"/>
+					<data>
+						<output datatype="anyType"/>
+						<wsdl/>
+						<parameter usageKind="output" name="contacts"/>
+					</data>
+				</component>
+				<component name="if-else" library="core" uid="25" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="6"/>
+						<datapoint pos="1" key="3"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="418" lty="34" rbx="515" rby="110"/>
+				</component>
+				<component name="equal" library="core" uid="24" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="1"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="250" rbx="303" rby="56"/>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="10" edgekey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="6" edgekey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="3" edgekey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="1" edgekey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="4" edgekey="15"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="Host2ServiceIpAddress" library="user" blackbox="0" uid="37" editable="1" inline="1">
+		<properties/>
+		<structure>
+			<children>
+				<component name="if-else" library="core" uid="38" kind="4">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="5"/>
+						<datapoint pos="1" key="6"/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="328" rbx="425" rby="76"/>
+				</component>
+				<component name="equal" library="core" uid="39" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="1"/>
+						<datapoint pos="1" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="250" lty="109" rbx="336" rby="165"/>
+				</component>
+				<component name="a" library="core" uid="40" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view lty="50" rbx="66" rby="89"/>
+					<data>
+						<input datatype="anyURI"/>
+						<wsdl/>
+						<parameter usageKind="input" name="a"/>
+					</data>
+				</component>
+				<component name="b" library="core" uid="42" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view lty="100" rbx="66" rby="139"/>
+					<data>
+						<input datatype="anyURI"/>
+						<wsdl/>
+						<parameter usageKind="input" name="b"/>
+					</data>
+				</component>
+				<component name="valuetrue" library="core" uid="41" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="8"/>
+					</targets>
+					<view rbx="105" rby="39"/>
+					<data>
+						<input datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="input" name="valuetrue"/>
+					</data>
+				</component>
+				<component name="output" library="core" uid="43" kind="7">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<view ltx="675" rbx="766" rby="39"/>
+					<data>
+						<output datatype="anyType"/>
+						<wsdl/>
+						<parameter usageKind="output" name="output"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="10" edgekey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="5" edgekey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="1" edgekey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="6" edgekey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="3" edgekey="15"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="NodeName" library="user" blackbox="0" uid="114" editable="1" inline="1">
+		<properties/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="122" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="109" lty="102" rbx="241" rby="120"/>
+					<data>
+						<constant value="icr:" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="substring-after" library="core" uid="118" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="2"/>
+						<datapoint pos="1" key="3"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="294" lty="64" rbx="426" rby="120"/>
+				</component>
+				<component name="node-name" library="core" uid="121" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="11"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="109" lty="64" rbx="223" rby="103"/>
+				</component>
+				<component name="result" library="core" uid="115" kind="7">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="6"/>
+					</sources>
+					<view ltx="516" lty="37" rbx="604" rby="76"/>
+					<data>
+						<output datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="output" name="result"/>
+					</data>
+				</component>
+				<component name="node" library="core" uid="125" kind="6">
+					<properties/>
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="12"/>
+					</targets>
+					<view rbx="84" rby="39"/>
+					<data>
+						<input datatype="string"/>
+						<wsdl/>
+						<parameter usageKind="input" name="node"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="3" edgekey="7"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="6" edgekey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="2" edgekey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="12">
+						<edges>
+							<edge vertexkey="11" edgekey="13"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

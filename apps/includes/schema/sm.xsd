@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+   Icaro Supervisor & Monitor (ICSM).
+   Copyright (C) 2015 DISIT Lab http://www.disit.org - University of Florence
+
+   This program is free software; you can redistribute it and/or
+   modify it under the terms of the GNU General Public License
+   as published by the Free Software Foundation; either version 2
+   of the License, or (at your option) any later version.
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="configuration">
+		<xs:annotation>
+			<xs:documentation>Configuration</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="identifier" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Internal Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Textual description or URI</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Configuration Name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="contacts">
+					<xs:annotation>
+						<xs:documentation>List of contacts</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="type" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Business or System</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="applications" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Icaro Applications</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element ref="application"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="tenants" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Icaro Tenants Application</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element ref="tenant"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="hosts" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Icaro Physical or Vrtual Machines</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element ref="host"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="devices" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Icaro Physical or Virtual Devices</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element ref="device"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="cid" type="xs:integer"/>
+		</xs:complexType>
+		<xs:keyref name="tenant" refer="cid">
+			<xs:selector xpath="tenant"/>
+			<xs:field xpath="@cid"/>
+		</xs:keyref>
+		<xs:keyref name="device" refer="cid">
+			<xs:selector xpath="device"/>
+			<xs:field xpath="@cid"/>
+		</xs:keyref>
+		<xs:key name="cid">
+			<xs:selector xpath="configuration"/>
+			<xs:field xpath="cid"/>
+		</xs:key>
+		<xs:keyref name="host" refer="cid">
+			<xs:selector xpath="host"/>
+			<xs:field xpath="@cid"/>
+		</xs:keyref>
+		<xs:keyref name="application" refer="cid">
+			<xs:selector xpath="application"/>
+			<xs:field xpath="@cid"/>
+		</xs:keyref>
+	</xs:element>
+	<xs:attribute name="cid" type="xs:integer"/>
+	<xs:element name="monitor_info">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="metrics">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="metric">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string">
+											<xs:annotation>
+												<xs:documentation>Name of metric</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="critical_value" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Threshold for critical value</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="warning_value" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Thrashold for warning value</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="args" type="xs:string" minOccurs="0"/>
+										<xs:element name="max_check_attempts" type="xs:integer" default="5" minOccurs="0"/>
+										<xs:element name="check_interval" type="xs:integer" default="5" minOccurs="0"/>
+										<xs:element name="status" default="running" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Running or Stopped o</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="running"/>
+													<xs:enumeration value="stopped"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="mode" type="xs:string" default="" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Active or Passive Check: default is Active</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="minfo_id" type="xs:integer"/>
+									<xs:attribute name="mid" type="xs:integer"/>
+								</xs:complexType>
+								<xs:key name="mid">
+									<xs:selector xpath="metric"/>
+									<xs:field xpath="@mid"/>
+								</xs:key>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="ref" type="xs:integer"/>
+			<xs:attribute name="type">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="service"/>
+						<xs:enumeration value="host"/>
+						<xs:enumeration value="tenant"/>
+						<xs:enumeration value="device"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="minfo_id" type="xs:integer"/>
+		</xs:complexType>
+		<xs:keyref name="moninfo_service" refer="minfo_id">
+			<xs:selector xpath="service"/>
+			<xs:field xpath="@minfo_id"/>
+		</xs:keyref>
+		<xs:keyref name="moninfo_tenant" refer="minfo_id">
+			<xs:selector xpath="tenant"/>
+			<xs:field xpath="@minfo_id"/>
+		</xs:keyref>
+		<xs:keyref name="moninfo_host" refer="minfo_id">
+			<xs:selector xpath="host"/>
+			<xs:field xpath="@minfo_id"/>
+		</xs:keyref>
+		<xs:keyref name="moninfo_device" refer="minfo_id">
+			<xs:selector xpath="device"/>
+			<xs:field xpath="@minfo_id"/>
+		</xs:keyref>
+		<xs:keyref name="metric" refer="minfo_id">
+			<xs:selector xpath="metric"/>
+			<xs:field xpath="@minfo_id"/>
+		</xs:keyref>
+		<xs:key name="minfo_id">
+			<xs:selector xpath="monitor_info"/>
+			<xs:field xpath="@minfo_id"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="service">
+		<xs:annotation>
+			<xs:documentation>Icaro Service</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Internal Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Service Name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="type" type="xs:string"/>
+				<xs:element name="description"/>
+				<xs:element name="ip_address" type="xs:string"/>
+				<xs:element name="service_group" type="xs:string"/>
+				<xs:element name="run_on" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Host Id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="monitor_info"/>
+				<xs:element name="port" type="xs:integer" minOccurs="0"/>
+				<xs:element name="process_name" type="xs:string" minOccurs="0"/>
+				<xs:element name="alias" type="xs:string" minOccurs="0"/>
+				<xs:element name="parent" type="xs:string" minOccurs="0"/>
+				<xs:element name="auth_user" type="xs:string" minOccurs="0"/>
+				<xs:element name="auth_pwd" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="minfo_id" type="xs:integer"/>
+			<xs:attribute name="sid" type="xs:integer"/>
+			<xs:attribute name="aid" type="xs:integer"/>
+		</xs:complexType>
+		<xs:key name="sid">
+			<xs:selector xpath="service"/>
+			<xs:field xpath="@sid"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="tenant">
+		<xs:annotation>
+			<xs:documentation>Icaro Tenant</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name">
+					<xs:annotation>
+						<xs:documentation>Tenant Name (es: XLMS)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="id">
+					<xs:annotation>
+						<xs:documentation>Tenant Id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="description" type="xs:string" default="">
+					<xs:annotation>
+						<xs:documentation>A short textual description</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="contacts" type="xs:string" default="">
+					<xs:annotation>
+						<xs:documentation>Email address of resposible</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="monitor_info"/>
+				<xs:element name="runOn">
+					<xs:annotation>
+						<xs:documentation>Application Id referred by Tenant</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="minfo_id" type="xs:integer"/>
+			<xs:attribute name="cid" type="xs:integer"/>
+			<xs:attribute name="tid" type="xs:integer"/>
+		</xs:complexType>
+		<xs:key name="tid">
+			<xs:selector xpath="tenant"/>
+			<xs:field xpath="@tid"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="application">
+		<xs:annotation>
+			<xs:documentation>Icaro Application</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name">
+					<xs:annotation>
+						<xs:documentation>Application Name (es: XLMS)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="id">
+					<xs:annotation>
+						<xs:documentation>Internal Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="description">
+					<xs:annotation>
+						<xs:documentation>Textual description or URI</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="contacts" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Email address of resposible</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="services">
+					<xs:annotation>
+						<xs:documentation>Icaro Services</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element ref="service">
+								<xs:annotation>
+									<xs:documentation>Icaro Service</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="cid" type="xs:integer"/>
+			<xs:attribute name="aid" type="xs:integer"/>
+		</xs:complexType>
+		<xs:keyref name="service" refer="aid">
+			<xs:selector xpath="service"/>
+			<xs:field xpath="@aid"/>
+		</xs:keyref>
+		<xs:key name="aid">
+			<xs:selector xpath="application"/>
+			<xs:field xpath="@aid"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="host">
+		<xs:annotation>
+			<xs:documentation>Icaro Physical or Virtual Machine</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Internal Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Host Name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="os" type="xs:string" default="">
+					<xs:annotation>
+						<xs:documentation>Operating System</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="type" default="host">
+					<xs:annotation>
+						<xs:documentation>Type of Host: Phiscal Host, or Virtual</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="host"/>
+							<xs:enumeration value="guest"/>
+							<xs:enumeration value="vmhost"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ip_address" type="xs:string" maxOccurs="unbounded"/>
+				<xs:element ref="monitor_info"/>
+				<xs:element name="alias" type="xs:string" minOccurs="0"/>
+				<xs:element name="parent_host" type="xs:string" minOccurs="0"/>
+				<xs:element name="host_group" type="xs:string" minOccurs="0"/>
+				<xs:element name="domain_name" type="xs:string" minOccurs="0"/>
+				<xs:element name="auth_pwd" type="xs:string" minOccurs="0"/>
+				<xs:element name="auth_user" type="xs:string" minOccurs="0"/>
+				<xs:element name="description" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="minfo_id" type="xs:integer"/>
+			<xs:attribute name="cid" type="xs:integer"/>
+			<xs:attribute name="hid" type="xs:integer"/>
+		</xs:complexType>
+		<xs:key name="hid">
+			<xs:selector xpath="host"/>
+			<xs:field xpath="@hid"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="device">
+		<xs:annotation>
+			<xs:documentation>Single Icaro Physical or Virtual Device</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="id">
+					<xs:annotation>
+						<xs:documentation>Internal Identifier</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="device_type">
+					<xs:annotation>
+						<xs:documentation>Router, Firewall, ...</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string"/>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="type">
+					<xs:annotation>
+						<xs:documentation>Physical (Default), Virtual</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="physical"/>
+							<xs:enumeration value="virtual"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="ip_address" type="xs:string" maxOccurs="unbounded"/>
+				<xs:element name="name" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Name of device</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="monitor_info"/>
+				<xs:element name="model" type="xs:string" minOccurs="0"/>
+				<xs:element name="description" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Textual description</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="port" type="xs:integer" minOccurs="0"/>
+				<xs:element name="alias" type="xs:string" minOccurs="0"/>
+				<xs:element name="parent_device" type="xs:string" minOccurs="0"/>
+				<xs:element name="device_group" type="xs:string" minOccurs="0"/>
+				<xs:element name="auth_user" type="xs:string" minOccurs="0"/>
+				<xs:element name="auth_pwd" type="xs:string" minOccurs="0"/>
+				<xs:element name="domain_name" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="minfo_id" type="xs:integer"/>
+			<xs:attribute name="cid" type="xs:integer"/>
+			<xs:attribute name="did" type="xs:integer"/>
+		</xs:complexType>
+		<xs:key name="did">
+			<xs:selector xpath="device"/>
+			<xs:field xpath="@did"/>
+		</xs:key>
+	</xs:element>
+	<xs:element name="contacts" type="xs:string"/>
+</xs:schema>

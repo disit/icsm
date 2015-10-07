@@ -1,0 +1,77 @@
+@CHARSET "ISO-8859-1";
+
+event *{
+	display: block;
+	padding: 0px;
+	font-size: inherit;
+	line-height: 1.428571429;
+	color: #555;
+	vertical-align: middle;
+	margin:0px
+}
+
+event host:before{
+	content:"Host:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event address:before{
+	content:"IP:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event output:before{
+	content:"Output:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event date:before{
+	content:"Date:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event hid:before
+{
+	content:"Id:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event state:before
+{
+	content:"State:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event type:before
+{
+	content:"Type:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event service:before
+{
+	content:"Service:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event attempts:before
+{
+	content:"Attempts:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+.notification_msg event *:not(output):not(host):not(state):not(service), 
+.notification_msg event output::before, .notification_msg event host::before, .notification_msg event state::before,
+.notification_msg event service::before
+{
+	display:none;
+}

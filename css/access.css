@@ -1,0 +1,20 @@
+@CHARSET "ISO-8859-1";
+#access_welcome
+{
+	float:right;
+	color:#fff;
+}
+
+/*#access_welcome *
+{
+	display:inline;
+	text-decoration:none;
+}
+
+#access_profile, #access_logout
+{
+	float:right;
+	margin:0px 5px 0px 5px;	
+}*/
+
+

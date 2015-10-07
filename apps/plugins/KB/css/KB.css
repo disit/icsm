@@ -1,0 +1,33 @@
+@CHARSET "ISO-8859-1";
+iframe#KB_editor_view
+{
+	width:100%;
+	height:800px;
+	border:0;
+}
+
+.SM-icon-kb
+{
+	background-image:url("../img/KB32.png");
+	
+}
+
+.kb_icon
+{
+	width: 16px;
+	height: 16px;
+	background-image: url("../img/KB16.png");
+	line-height: 1;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.kb_meter
+{
+	float:left;
+	text-transform: capitalize;
+}
+.kb_meter_value
+{
+	float:right;
+}

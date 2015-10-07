@@ -1,0 +1,65 @@
+<!--%tpl_registry_entries-->
+<div class=table-responsive>
+<table class="table table-striped">
+<thead>
+  <tr class="odd">
+    <th>{label_time}</th>
+    <th>{label_sender}</th>
+    <th>{label_user}</th>
+    <th>{label_method}</th>
+    <th>{label_request}</th>
+    <th>{label_type}</th>
+    <th>{label_data}</th>
+  </tr>
+ </thead>
+ <tbody>
+  <!--%tpl_repeat_entries-->
+	<tr class="{class}">
+	  <td>{timestamp}</td>
+	  <td>{sender_ip}</td>
+	  <td>{sender_user}</td>
+	  <td>{method}</td>
+	  <td>{request}</td>
+	  <td>{content_type}</td>
+	  <td>{data}</td>
+	</tr>
+  <!--%%tpl_repeat_entries-->
+  {entries}
+  </tbody>
+</table>
+</div>
+{pagination}
+<!--%%tpl_registry_entries-->
+
+
+<!--%tpl_rest_server_status_dashboard-->
+<div id="rest_server_dashboard" class="dashboard-element col-md-6 col-lg-6 col-xg-2">
+<div class="panel panel-primary">
+		  <div class="panel-heading">
+		    API Rest Server
+		  </div>
+		<div class="panel-body">
+<!--%tpl_repeat_rest_server_status_dashboard_last-->
+<div id="{id}" class="rest_server_status_dashboard">
+<!--  	<div class="panel-heading"><img class="rest_server_status_icon" src="apps/img/{img}" />Calls Status</div>
+	-->
+	<h5><i class="rest_server_status_icon"></i> Calls Status</h5>
+	<div class="rest_server_status">
+		<div class="rest_server_status_info"><label style="float:left">Calls</label><span style="float:right" class="badge">{total}</span></div>
+	</div>
+	<div class="rest_server_status_divider"><hr></div>
+	<div class="rest_server_status">
+		<label>Latest ({timestamp})</label><div class="rest_server_status_info"><label style="float:left">Sender</label><span style="float:right" class="">{sender_user}</span></div>
+		<div class="rest_server_status_info"><label style="float:left">Method</label><span style="float:right" class="">{method}</span></div>
+		<div class="rest_server_status_info"><label style="float:left">Host address</label><span style="float:right" class="">{sender_ip}</span></div>
+		<div class="rest_server_status_info"><label style="float:left">API</label><span style="float:right" class="">{request}</span></div>
+		<div class="rest_server_status_info"><label style="float:left">Content-Type</label><span style="float:right" class="">{content_type}</span></div>
+	</div>
+</div>
+<!--%%tpl_repeat_rest_server_status_dashboard_last-->
+{rest_server_status_dashboard_last}
+
+</div>
+</div>
+</div>
+<!--%%tpl_rest_server_status_dashboard-->

@@ -1,0 +1,23 @@
+.sm-icon-roles
+{
+	background-image:url("../img/role.png");
+	
+}
+
+.sm-icon-perms
+{
+	background-image:url("../img/perms.gif");
+	
+}
+
+.sm-icon-acl
+{
+	background-image:url("../img/acl.png");
+	
+}
+
+#ACLUserProfileGrid
+{
+	color:#444;
+}
+

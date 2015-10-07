@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metrics>
+  <hostgroupmetrics>
+      <hostgroup group="%URN%">
+        <metric name="CPU AVG" unit='%'>
+            <measure multivalue="avg">
+                <lmetric>CPU AVG</lmetric>
+                <perfdata></perfdata>
+                <operator>last</operator>
+            </measure>
+        </metric>       
+        <metric name="Disk usage" unit='MB'>
+            <measure multivalue="sum">
+                <lmetric>Disk Usage</lmetric>
+                <perfdata></perfdata>
+                <operator>last</operator>
+            </measure>
+        </metric>
+        <metric name="Network" unit='bit'>
+            <measure multivalue="sum">
+                <lmetric>Net Traffic</lmetric>
+                <perfdata></perfdata>
+                <operator>last</operator>
+            </measure>
+        </metric>
+        <metric name="Memory Used" unit='MB'>
+            <measure multivalue="sum">
+                <lmetric>Physical Memory Used</lmetric>
+                <perfdata></perfdata>
+                <operator>last</operator>
+            </measure>
+        </metric>
+        <metric name="Memory Used Avg Weekly" unit='MB'>
+            <measure multivalue="sum">
+                <lmetric>Physical Memory Used</lmetric>
+                <perfdata></perfdata>
+                <timeinterval unit="day">7</timeinterval>
+                <operator>avg</operator>
+            </measure>
+        </metric>
+  	</hostgroup>
+ </hostgroupmetrics>
+ <servicemetrics/>
+</metrics>
+        

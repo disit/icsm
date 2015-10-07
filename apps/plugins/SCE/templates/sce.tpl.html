@@ -1,0 +1,43 @@
+<!--%tpl_sce_mail_body-->
+<h3 style="text-transform:capitalize;">{title}</h3>
+<!--%tpl_repeat_data-->
+<div style="display: block;	padding: 0px;	font-size: 12px;	line-height: 1.428571429; vertical-align: middle;	margin:0px">
+<b style="text-transform:capitalize;padding-right:5px;">{label}:</b><span style="color: #555;">{text}</span>
+</div>
+<!--%%tpl_repeat_data-->
+{data}
+<h4>Metrics Out of Bounds</h4>
+{metrics}
+<!--%%tpl_sce_mail_body-->
+
+<!--%tpl_sce_table-->
+<table style="text-align: center; border-spacing: 0px; border: 1px solid lightgray;
+border-collapse: collapse;
+word-break: break-all;border-color:lightgray; display: block;	padding: 0px;	font-size: 12px;	line-height: 1.428571429; vertical-align: middle;	margin:0px">
+<colgroup>{colgroup}</colgroup>
+<!--%tpl_repeat_th-->
+<th style="background-color: lightgray;">{th}</th>
+<!--%%tpl_repeat_th-->
+<thead>
+ 	<tr style="text-transform:capitalize;border: 1px solid lightgray;">{th}</tr>
+</thead>
+<tfoot>
+ 	{tfoot}
+</tfoot>
+<tbody>
+<!--%tpl_repeat_rows-->
+ 	{row}
+ <!--%%tpl_repeat_rows-->
+ {rows}
+</tbody>
+</table>
+<!--%%tpl_sce_table-->
+
+<!--%tpl_table_row-->
+<tr>
+	<!--%tpl_repeat_td-->
+		<td style="padding:5px;border: 1px solid lightgray;">{td}</td>
+	<!--%%tpl_repeat_td-->
+	{td}
+</tr>
+<!--%%tpl_table_row-->

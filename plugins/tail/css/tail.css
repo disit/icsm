@@ -1,0 +1,55 @@
+#tailLogTexto   {
+	padding-right: 2px;
+	padding-left: 2px;
+	min-height: 72px;
+    width:100%;
+    overflow: auto;
+    height: 100%;
+}
+#tailLogCursor {
+    height:18px;
+    left:20px;
+    padding-left: 2px;
+    font-weight: bold;
+    width:95%;
+}
+#tailholder{
+    /* position: fixed;*/
+    bottom:0px;
+    left: 0px;
+    margin: 0px;
+    left:0px;
+    width: 100%;
+    font-family: Courier, "Trebuchet MS",Tahoma, Helvetica, sans-serif;
+   /* background-image: url(../img/fondo_webtail.jpg);*/
+    color: #FFFFFF;
+    font-size: 11px;
+    padding-top:0px;
+    padding-bottom:0px;
+    cursor: default;
+    background-color:black;
+    height:400px;
+}
+#statusbar{
+    cursor: s-resize;
+    padding-top:10px;
+    padding-left:0px;
+    margin: 0px;
+    height:2px;
+}
+
+#TailPanel .panel-body
+{
+	padding:5px;
+}
+
+#TailPanel .tail-icon
+{
+	width:16px;
+	height:16px;
+	background-image:url(../img/tail-icon.png);
+	background-size:16px 16px;
+	background-repeat:no-repeat;
+	display: inline-block;
+	vertical-align: middle;
+}

@@ -1,0 +1,117 @@
+
+
+/* Styles*/
+ @media (max-width: 767px) 
+ {
+	
+	.sm-table-responsive
+	{
+		overflow-x:hidden !important;
+	}
+	
+	 .sm-table-responsive table{
+		  width: 100%;
+		  margin-bottom: 1.5em;
+		  font-size: .9em;   
+	  }
+  
+    
+   .sm-table-responsive thead {
+    /* Accessibly hide <thead> on narrow viewports*/
+    position: absolute;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0;
+    border: 0;
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden;
+    }
+    
+   .sm-table-responsive th {
+      background-color: rgba(29,150,178,1);
+      border: 1px solid rgba(29,150,178,1);
+      font-weight: normal;
+      text-align: center;
+      color: white;
+      }
+   
+  
+  
+  /* Set these items to display: block for narrow viewports*/
+  .sm-table-responsive tbody,
+ .sm-table-responsive  tr,
+ .sm-table-responsive th,
+ .sm-table-responsive td {
+    display: block;
+    padding: 0;
+    text-align: left;
+    white-space: normal !important;
+    min-height:2em;
+   
+  }
+  
+ .sm-table-responsive th,
+ .sm-table-responsive td {
+    padding: .5em;
+    vertical-align: middle;
+    
+ 
+  }
+  
+  .sm-table-responsivecaption {
+    margin-bottom: 1em;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    
+  
+  }
+  
+  .sm-table-responsivetfoot {
+    font-size: .8em;
+    font-style: italic;
+    
+
+  }
+  
+ .sm-table-responsive tbody {
+   
+      display: table-row-group; 
+    }
+    
+       
+  .sm-table-responsive tr:nth-child(odd)>td[scope="row"] {
+     background: -webkit-linear-gradient(top, #eeeeee, #cccccc) !important;
+	 background: linear-gradient(top, #eeeeee, #cccccc) !important;
+	 background: linear-gradient(#eeeeee, #cccccc) !important;
+     text-align:left;
+     font-weight:bold;
+      
+    }
+  .sm-table-responsive tr:nth-child(even)>td[scope="row"] {
+      background: -webkit-linear-gradient(top, #eeeeee, #cccccc) !important;
+	  background: linear-gradient(top, #eeeeee, #cccccc) !important;
+	  background: linear-gradient(#eeeeee, #cccccc) !important;
+      text-align:left;
+      font-weight:bold;
+    }
+    
+  .sm-table-responsive  td {
+      text-align: right;
+    }
+    
+ /* .sm-table-responsive  td[data-type=currency] {
+      text-align: right; 
+    }*/
+    
+  .sm-table-responsive  td[data-title]:before {
+      content: attr(data-title);
+      float: left;
+      font-size: .8em;
+      color: rgba(0,0,0,.9);
+      text-transform:capitalize;
+      margin-right:15%;
+      font-weight:bold;
+    } 
+}

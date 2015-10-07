@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+
+table#sla_health_table a
+{
+	color:#555 !important;
+	font-weight:bold;
+}
+
+#Alarms_container a[data-parent="#accordion"]
+{
+	color:black;
+	text-decoration:none;
+}
+
+table#Notifications event[type="sce_sla_event"] metric *:not(metric_name)
+{
+	display:none;
+}
+
+event[type="sce_sla_event"] timestamp:before
+{
+	content:"Alarm Time:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event[type="sce_sla_event"] business_configuration:before
+{
+	content:"Configuration:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event[type="sce_sla_event"] sla:before
+{
+	content:"SLA:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event[type="sce_sla_event"] metric metric_name:before
+{
+	content:"Metric:";
+	padding-right:5px;
+	font-weight:bold;
+}
+
+event[type="sce_sla_event"] metric *:not(metric_name)
+{
+	display:none !important;
+}
+
+.notification_msg event[type="sce_sla_event"] timestamp, .notification_msg event[type="sce_sla_event"] business_configuration, .notification_msg event[type="sce_sla_event"] sla
+{
+	display:block !important;
+}
