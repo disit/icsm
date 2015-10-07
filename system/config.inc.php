@@ -25,9 +25,9 @@ $dbPwd="dbpassword";
 //MySql Db Name
 $dbName="icaro";
 //Base Url
-$baseUrl="/icaroSVN/";
+$baseUrl="/SM/";
 //Base Dir
-$baseDir="/icaroSVN/";
+$baseDir="/SM/";
 //Class folder path for system modules
 $classPath['system']="system/";
 //Class folder path for apps/addons modules

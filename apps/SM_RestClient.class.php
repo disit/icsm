@@ -14,10 +14,10 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA. */
 
-include("lib/RestClient.class.php");
+include_once ("lib/RestClient.class.php");
 class SM_RestClient extends RestClient{
 
-	function __construct()
+	function SM_RestClient()
 	{
 		parent::__construct();
 	}

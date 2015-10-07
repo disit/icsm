@@ -63,7 +63,7 @@ class RestClient {
 		curl_setopt($this->curl,CURLOPT_URL,$this->url);
 		curl_setopt($this->curl, CURLOPT_HEADERFUNCTION,array(&$this,'readHeader')); 
 		curl_setopt($this->curl, CURLOPT_CONNECTTIMEOUT ,30);
-		curl_setopt($this->curl, CURLOPT_TIMEOUT, 120); //timeout in seconds
+		curl_setopt($this->curl, CURLOPT_TIMEOUT, 10); //timeout in seconds
 		$r = curl_exec($this->curl);
 		//$curl_errno = curl_errno($this->curl);
 		//$curl_error = curl_error($this->curl);
